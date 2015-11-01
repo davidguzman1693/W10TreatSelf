@@ -1,0 +1,21 @@
+﻿<Application
+    x:Class="TreatSelf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TreatSelf"
+    RequestedTheme="Light"
+    xmlns:models="using:TreatSelf.Models"
+    
+    >
+    <Application.Resources>
+        <models:Usuario x:Key="usuario"/>
+        <models:Usuarios x:Key="usuarios"/>
+        <models:Item x:Key="item"/>
+        <models:Tratamiento x:Key="tratamiento"/>
+        <models:TratamientoConverter x:Key="tratamientoConverter"/>
+        
+    </Application.Resources>
+    
+
+</Application>
+

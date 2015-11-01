@@ -1,0 +1,115 @@
+﻿<Page
+    x:Class="TreatSelf.AddPacTra"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TreatSelf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:TreatSelf.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+         
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                    x:Name="Nombre" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Telefono" HorizontalAlignment="Center" />
+            <Button Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"/>
+                                      
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                    </StackPanel>
+                
+
+          
+                
+                <Pivot Grid.Column="1">
+                    <PivotItem Header="Tratamientos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                       <ListBox
+                           x:Name="tratas"
+                         ItemsSource="{x:Bind Tratas1}"
+                        Grid.Row="0"
+                         >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:Tratamiento">
+                            <Border BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                <StackPanel Margin="10 0 0 0">
+                                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                       Text="{x:Bind NomTratamiento}"/>
+                                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" 
+                                        Text="{x:Bind Descripcion}"/>
+                               </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+                    <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=tratas}">
+                        <TextBox x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
+                        <TextBox x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <TextBox x:Name="fini" PlaceholderText="Fecha inicio" Margin="0 0 0 10" Text="{Binding Fechainicio, Mode=TwoWay}"/>
+                        <TextBox x:Name="ffin" PlaceholderText="Fecha fin" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
+                        <Button Content="Editar" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+                        <PivotItem Header="Mas tratamientos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <ListBox
+                         ItemsSource="{x:Bind Tratas2}"
+                         x:Name="masTratas" 
+                        Grid.Row="0"
+                         >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate x:DataType="models:Tratamiento">
+                                <Border BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                    <StackPanel Margin="10 0 0 0">
+                                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                       Text="{x:Bind NomTratamiento}"/>
+                                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" 
+                                        Text="{x:Bind Descripcion}"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=masTratas}">
+                        <TextBox x:Name="nomtra1" PlaceholderText="Nombre tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True" />
+                        <TextBox x:Name="desc1" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <DatePicker x:Name="fini1" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <TextBox x:Name="ffin1" PlaceholderText="Fecha fin" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
+                        <Button Content="Agregar" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+                    </Pivot>
+                
+            
+
+        
+    </Grid>
+</Page>
