@@ -10,9 +10,10 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton
+                <AppBarButton x:ConnectionId='2'
                     Icon="Add"
-                    Label="Agregar Tratamiento" 
+                    Label="Agregar Tratamiento"                         
+                    
                     />
             <AppBarSeparator/>
                 <AppBarToggleButton
@@ -23,21 +24,24 @@
          </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          DataContext="{Binding Source={StaticResource usuarios}}">
-        
-        
-        <SplitView x:ConnectionId='2' 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+        <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+        <TextBlock x:ConnectionId='11' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}" Text="Hola" />
+        </StackPanel>
+        <SplitView x:ConnectionId='3' 
            x:Name="panel1"
            IsPaneOpen="False"
            CompactPaneLength="50"
            DisplayMode="CompactOverlay"
            OpenPaneLength="200" Margin="0,64,-10,120"
             PaneBackground="#333333"
+            
             >
+            
             <SplitView.Pane>
                 <StackPanel>
-                    <Button x:ConnectionId='3' Width="50" Height="50"                  
+                    <Button x:ConnectionId='4' Width="50" Height="50"                  
                             >
                         <StackPanel>
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
@@ -45,7 +49,7 @@
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
                         </StackPanel>
                     </Button>
-                    <ListBox x:ConnectionId='4' x:Name="menu"
+                    <ListBox x:ConnectionId='5' x:Name="menu"
                                                             
                              Background="Transparent"
                              Margin="0" Padding="0"                              
@@ -53,12 +57,12 @@
                              >
                         <ListBox.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='5' Orientation="Horizontal">
-                                    <SymbolIcon x:ConnectionId='6'                        
+                                <StackPanel x:ConnectionId='6' Orientation="Horizontal">
+                                    <SymbolIcon x:ConnectionId='7'                        
                                                 Width="50" Height="50"
                                                 Foreground="GreenYellow"
                                                 />
-                                    <TextBlock x:ConnectionId='7'                      
+                                    <TextBlock x:ConnectionId='8'                      
                                                VerticalAlignment="Center"
                                                Foreground="Green"
                                                />
@@ -77,8 +81,8 @@
                     <PivotItem Header="Tus pacientes" >
                         
                            
-                            <ListBox x:ConnectionId='9' x:Name="listaPaci"
-                         ItemsSource="{Binding Data}"
+                            <ListBox x:ConnectionId='10' x:Name="listaPaci"
+                                                    
                          Grid.Row="0"                                        
                                      
                          >
@@ -106,9 +110,9 @@
     </PivotItem>
                 <PivotItem Header="Mas pacientes">
                    
-                        <ListBox x:ConnectionId='8' x:Name="listaNoPaci"
+                        <ListBox x:ConnectionId='9' x:Name="listaNoPaci"
                            Grid.Row="0"
-                          ItemsSource="{Binding Data1}"
+                                                      
                                                                          
                          >
                             <ListBox.ItemTemplate>

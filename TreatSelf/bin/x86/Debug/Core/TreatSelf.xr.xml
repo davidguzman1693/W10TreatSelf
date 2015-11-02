@@ -9,11 +9,9 @@
     <RootPropertyPathName Name="Fechainicio" />
     <RootPropertyPathName Name="Descripcion" />
     <RootPropertyPathName Name="NomTratamiento" />
-    <RootPropertyPathName Name="Data1" />
     <RootPropertyPathName Name="Correo" />
     <RootPropertyPathName Name="Apellido" />
     <RootPropertyPathName Name="Nombre" />
-    <RootPropertyPathName Name="Data" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -34,7 +32,6 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="DataContext" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetRow" />
@@ -72,7 +69,6 @@
       <RootProperty Name="ElementName" />
       <RootProperty Name="Mode" />
       <RootProperty Name="Converter" />
-      <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="PlaceholderText" />
@@ -84,6 +80,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Margin" />
       <RootProperty Name="Date" />
+      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -120,15 +117,7 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="TreatSelf.AddPacTra" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Hub">
-      <RootProperty Name="Header" />
-      <RootProperty Name="Sections" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
-      <RootProperty Name="Header" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="ContentTemplate" />
-    </RootType>
+    <RootType FullName="TreatSelf.AddTratamiento" />
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Background" />
       <RootProperty Name="CornerRadius" />
@@ -139,6 +128,11 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="OnContent" />
+      <RootProperty Name="OffContent" />
+    </RootType>
     <RootType FullName="TreatSelf.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="PrimaryCommands" />
@@ -146,6 +140,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Icon" />
       <RootProperty Name="Label" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarSeparator" />
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarToggleButton">
@@ -169,6 +164,7 @@
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="TreatSelf.Medico" />
+    <RootType FullName="TreatSelf.Paciente" />
     <RootType FullName="TreatSelf.Tratamientos" />
   </Roots.RootTypes>
 </Roots>

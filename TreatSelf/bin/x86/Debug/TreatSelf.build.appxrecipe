@@ -72,6 +72,12 @@
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Parse.dll">
+      <PackagePath>Parse.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Parse.WinRT.dll">
+      <PackagePath>Parse.WinRT.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

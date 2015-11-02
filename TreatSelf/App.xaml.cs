@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parse;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace TreatSelf
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            ParseClient.Initialize("BwZzgaCPcIwIMh38yPv42tZGpXxGN9KTKsTJnZrk", "rkKZsjYjacapE8SrTFrWWoKW9yX2ubJRZYqkiZOv");
         }
 
         /// <summary>

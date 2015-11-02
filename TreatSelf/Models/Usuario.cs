@@ -9,6 +9,19 @@ namespace TreatSelf.Models
 {
     public class Usuario : INotifyPropertyChanged
     {
+
+        private String id;
+
+        public String Id
+        {
+            get { return id; }
+            set { id = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Id"));
+            }
+        }
+
+
         private String nombre;
 
         public String Nombre
@@ -32,9 +45,9 @@ namespace TreatSelf.Models
             }
         }
 
-        private uint cedula;
+        private String cedula;
 
-        public uint Cedula
+        public String Cedula
         {
             get { return cedula; }
             set { cedula = value;
@@ -74,6 +87,28 @@ namespace TreatSelf.Models
             set { perfil = value;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Perfil"));
+            }
+        }
+
+        private String username;
+
+        public String Username
+        {
+            get { return username; }
+            set { username = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Username"));
+            }
+        }
+
+        private String password;
+
+        public String Password
+        {
+            get { return password; }
+            set { password = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
 

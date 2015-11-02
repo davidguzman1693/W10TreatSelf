@@ -5,16 +5,20 @@
     xmlns:local="using:TreatSelf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:TreatSelf.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
-        <Hub Header="TREATSELF">
 
-            <HubSection Header="Inicia sesion" Background="WhiteSmoke">
+            
                 
-             <DataTemplate>
-                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20">
+            
+                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="0">
                         <Border BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
@@ -24,43 +28,43 @@
                                     <TextBlock Text="Password " Margin="0,10,0,0"  />
                                 </StackPanel>
                                 <StackPanel>
-                                    <TextBox PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
-                                    <PasswordBox Margin="10,0,0,0" Background="Gray"/>
-                                    <Button Content="Iniciar Sesion" Margin="0,10,0,10" Background="GhostWhite"/>
+                                    <TextBox x:Name="user" PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
+                                    <PasswordBox x:Name="pass" Margin="10,0,0,0" Background="Gray"/>
+                                    <Button Content="Iniciar Sesion" Margin="0,10,0,10" Background="GhostWhite" Click="login"  />
                                 </StackPanel>
                                 
                             </StackPanel>
                         </Border>
                     </RelativePanel>
-                </DataTemplate>
-            </HubSection>
-            <HubSection Header="Registrate"  Background="GhostWhite"> 
-                <DataTemplate>
-                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20">
+               
+            
+                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="1">
                         <StackPanel Orientation="Horizontal" Width="200">
                             <StackPanel>
                                 <TextBlock Text="Nombre " Margin="0,10,0,10" />
                                 <TextBlock Text="Apellido " Margin="0,10,0,10" />
                                 <TextBlock Text="Cedula " Margin="0,10,0,10" />
                                 <TextBlock Text="Correo " Margin="0,10,0,10" />
+                                <TextBlock Text="Telefono " Margin="0,10,0,10" />
                                 <TextBlock Text="Perfil " Margin="0,10,0,10" />
                                 <TextBlock Text="User " Margin="0,10,0,10" />
                                 <TextBlock Text="Password " Margin="0,10,0,0"  />
+                                <TextBlock Text="Perfil " Margin="0,10,0,0"  />
                             </StackPanel>
                             <StackPanel Width="100">
-                                <TextBox PlaceholderText="Nombre" Margin="10,10,0,10" Background="Gray" />
-                                <TextBox PlaceholderText="Apellido" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox PlaceholderText="Cedula" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox PlaceholderText="Correo" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
-                                <PasswordBox Margin="10,0,0,0" Background="Gray"/>
-                                <Button Content="Registrarse" Margin="0,10,0,10" Background="GhostWhite"/>
+                                <TextBox x:Name="name" PlaceholderText="Nombre" Margin="10,10,0,10" Background="Gray" />
+                                <TextBox x:Name="lastname" PlaceholderText="Apellido" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox x:Name="cedula" PlaceholderText="Cedula" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox x:Name="mail" PlaceholderText="Correo" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox x:Name="telefono" PlaceholderText="Telefono" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox x:Name="username" PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
+                                <PasswordBox x:Name="password" Margin="10,0,0,0" Background="Gray"/>
+                                <ToggleSwitch x:Name="perfil" Margin="10,0,0,0" OnContent="Medico" OffContent="Paciente" />
+                                <Button Content="Registrarse" Margin="0,10,0,10" Background="GhostWhite" Click="Register" />
                             </StackPanel>
                         </StackPanel>
                     </RelativePanel>
-                </DataTemplate>
-            </HubSection>
-        </Hub>
+              
 
     </Grid>
 </Page>

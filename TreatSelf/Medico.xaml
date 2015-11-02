@@ -12,7 +12,8 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton
                     Icon="Add"
-                    Label="Agregar Tratamiento" 
+                    Label="Agregar Tratamiento" Click="toAddTratamiento"
+                    
                     />
             <AppBarSeparator/>
                 <AppBarToggleButton
@@ -23,10 +24,11 @@
          </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-          DataContext="{Binding Source={StaticResource usuarios}}">
-        
-        
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+        <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+        <TextBlock x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}" Text="Hola" />
+        </StackPanel>
         <SplitView 
            x:Name="panel1"
            IsPaneOpen="False"
@@ -34,7 +36,9 @@
            DisplayMode="CompactOverlay"
            OpenPaneLength="200" Margin="0,64,-10,120"
             PaneBackground="#333333"
+            
             >
+            
             <SplitView.Pane>
                 <StackPanel>
                     <Button Width="50" Height="50" Click="showMenu" 
@@ -78,7 +82,7 @@
                         
                            
                             <ListBox x:Name="listaPaci"
-                         ItemsSource="{Binding Data}"
+                         ItemsSource="{x:Bind Data}"
                          Grid.Row="0" SelectionChanged="goToSelectedPaciente"
                                      
                          >
@@ -108,7 +112,7 @@
                    
                         <ListBox x:Name="listaNoPaci"
                            Grid.Row="0"
-                          ItemsSource="{Binding Data1}"
+                          ItemsSource="{x:Bind Data1}"
                           SelectionChanged="listaNoPaci_SelectionChanged"
                          >
                             <ListBox.ItemTemplate>

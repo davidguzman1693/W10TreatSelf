@@ -99,6 +99,9 @@
     <Compile Include="AddPacTra.xaml.cs">
       <DependentUpon>AddPacTra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddTratamiento.xaml.cs">
+      <DependentUpon>AddTratamiento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
     <Compile Include="Models\TratamientoConverter.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Usuarios.cs" />
+    <Compile Include="Net\ParseConnection.cs" />
+    <Compile Include="Paciente.xaml.cs">
+      <DependentUpon>Paciente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tratamientos.xaml.cs">
       <DependentUpon>Tratamientos.xaml</DependentUpon>
@@ -143,11 +150,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddTratamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Medico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paciente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

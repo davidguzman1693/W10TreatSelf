@@ -9,6 +9,18 @@ namespace TreatSelf.Models
 {
     public class Tratamiento: INotifyPropertyChanged
     {
+        private String id;
+
+        public String Id
+        {
+            get { return id; }
+            set { id = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Id"));
+            }
+        }
+
+
         private String nomTratamiento;
 
         public String NomTratamiento

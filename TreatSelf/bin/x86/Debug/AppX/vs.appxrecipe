@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-01T17:27:34.464</Modified>
+      <Modified>2015-11-02T00:58:53.228</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\entrypoint\TreatSelf.exe">
       <PackagePath>entrypoint\TreatSelf.exe</PackagePath>
-      <Modified>2015-11-01T17:27:26.558</Modified>
+      <Modified>2015-11-02T00:58:50.574</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -96,13 +96,21 @@
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-10-29T14:45:33.086</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Parse.dll">
+      <PackagePath>Parse.dll</PackagePath>
+      <Modified>2015-11-01T21:27:58.134</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Parse.WinRT.dll">
+      <PackagePath>Parse.WinRT.dll</PackagePath>
+      <Modified>2015-11-01T21:27:58.008</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2015-10-30T02:07:33.749</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-01T17:27:28.712</Modified>
+      <Modified>2015-11-02T00:58:52.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\SQLitePCL.dll">
       <PackagePath>SQLitePCL.dll</PackagePath>
@@ -510,11 +518,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\TreatSelf.exe">
       <PackagePath>TreatSelf.exe</PackagePath>
-      <Modified>2015-11-01T17:27:34.454</Modified>
+      <Modified>2015-11-02T00:58:53.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\TreatSelf.xr.xml">
       <PackagePath>TreatSelf.xr.xml</PackagePath>
-      <Modified>2015-11-01T17:27:25.944</Modified>
+      <Modified>2015-11-02T00:51:21.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\WinMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
