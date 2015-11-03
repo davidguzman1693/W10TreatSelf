@@ -470,8 +470,13 @@ C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Core\Parse.dll
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Core\Parse.WinRT.dll
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\AddTratamiento.xbf
-C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\TreatSelf.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\AddTratamiento.g.i.cs
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\AddTratamiento.g.cs
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\AddTratamiento.xaml
 C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\AddTratamiento.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\MiInformacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.g.i.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.g.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.xaml
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\TreatSelf.csprojResolveAssemblyReference.cache

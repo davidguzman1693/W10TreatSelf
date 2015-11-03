@@ -111,11 +111,13 @@
     <Compile Include="Medico.xaml.cs">
       <DependentUpon>Medico.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MiInformacion.xaml.cs">
+      <DependentUpon>MiInformacion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Tratamiento.cs" />
     <Compile Include="Models\TratamientoConverter.cs" />
     <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Net\ParseConnection.cs" />
     <Compile Include="Paciente.xaml.cs">
       <DependentUpon>Paciente.xaml</DependentUpon>
@@ -159,6 +161,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Medico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiInformacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

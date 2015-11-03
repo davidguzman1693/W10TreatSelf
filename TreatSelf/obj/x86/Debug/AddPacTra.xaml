@@ -17,13 +17,13 @@
          
                     <StackPanel Grid.Column="0" HorizontalAlignment="Center">
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
-                        <TextBlock x:ConnectionId='18' Style="{StaticResource TitleTextBlockStyle}" 
+                        <TextBlock x:ConnectionId='21' Style="{StaticResource TitleTextBlockStyle}" 
                                     x:Name="Nombre" HorizontalAlignment="Center" />
-                        <TextBlock x:ConnectionId='19' Style="{StaticResource BodyTextBlockStyle}"
+                        <TextBlock x:ConnectionId='22' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Correo" HorizontalAlignment="Center" />
-                        <TextBlock x:ConnectionId='20' Style="{StaticResource BodyTextBlockStyle}"
+                        <TextBlock x:ConnectionId='23' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Cedula" HorizontalAlignment="Center" />
-                        <TextBlock x:ConnectionId='21' Style="{StaticResource BodyTextBlockStyle}"
+                        <TextBlock x:ConnectionId='24' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
             <Button Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"/>
                                       
@@ -40,21 +40,21 @@
                         <RowDefinition Height="350"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                       <ListBox x:ConnectionId='10'
+                       <ListBox x:ConnectionId='11'
                            x:Name="tratas"
                                                        
-                        Grid.Row="0"
+                        Grid.Row="0"                                            
                          >
                     <ListBox.ItemTemplate>
                         <DataTemplate                                >
-                            <Border x:ConnectionId='15' BorderBrush="GreenYellow" 
+                            <Border x:ConnectionId='18' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                 <StackPanel Margin="10 0 0 0">
-                                    <TextBlock x:ConnectionId='16' Style="{StaticResource TitleTextBlockStyle}" 
-                                                                     />
-                                    <TextBlock x:ConnectionId='17' Style="{StaticResource CaptionTextBlockStyle}" 
-                                                                   />
+                                    <TextBlock x:ConnectionId='19' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                                  />
+                                    <TextBlock x:ConnectionId='20' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                                />
                                </StackPanel>
                             </Border>
                         </DataTemplate>
@@ -62,11 +62,14 @@
 
                 </ListBox>
                     <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=tratas}">
-                        <TextBox x:ConnectionId='11' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
-                        <TextBox x:ConnectionId='12' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
-                        <TextBox x:ConnectionId='13' x:Name="fini" PlaceholderText="Fecha inicio" Margin="0 0 0 10" Text="{Binding Fechainicio, Mode=TwoWay}"/>
-                        <TextBox x:ConnectionId='14' x:Name="ffin" PlaceholderText="Fecha fin" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
-                        <Button Content="Editar" HorizontalAlignment="Right"/>
+                        <TextBox x:ConnectionId='12' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
+                        <TextBox x:ConnectionId='13' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='14' x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='15' x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:ConnectionId='16' Content="Borrar" HorizontalAlignment="Right" Margin="10,0,0,10"                                  />
+                            <Button x:ConnectionId='17' Content="Editar" HorizontalAlignment="Right"                 Margin="10,0,0,10" />
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </PivotItem>
@@ -79,18 +82,18 @@
                     <ListBox x:ConnectionId='2'
                                                        
                          x:Name="masTratas" 
-                        Grid.Row="0"
+                        Grid.Row="0"                            
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate                                >
-                                <Border x:ConnectionId='7' BorderBrush="GreenYellow" 
+                                <Border x:ConnectionId='8' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                     <StackPanel Margin="10 0 0 0">
-                                        <TextBlock x:ConnectionId='8' Style="{StaticResource TitleTextBlockStyle}" 
-                                                                     />
-                                        <TextBlock x:ConnectionId='9' Style="{StaticResource CaptionTextBlockStyle}" 
-                                                                   />
+                                        <TextBlock x:ConnectionId='9' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                                  />
+                                        <TextBlock x:ConnectionId='10' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                                />
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
@@ -101,8 +104,8 @@
                         <TextBox x:ConnectionId='3' x:Name="nomtra1" PlaceholderText="Nombre tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True" />
                         <TextBox x:ConnectionId='4' x:Name="desc1" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
                         <DatePicker x:ConnectionId='5' x:Name="fini1" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
-                        <TextBox x:ConnectionId='6' x:Name="ffin1" PlaceholderText="Fecha fin" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
-                        <Button Content="Agregar" HorizontalAlignment="Right"/>
+                        <DatePicker x:ConnectionId='6' x:Name="ffin1" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <Button x:ConnectionId='7' Content="Agregar" HorizontalAlignment="Right"              />
                     </StackPanel>
                 </Grid>
             </PivotItem>

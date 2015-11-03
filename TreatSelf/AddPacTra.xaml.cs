@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parse;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -26,6 +27,10 @@ namespace TreatSelf
     public sealed partial class AddPacTra : Page
     {
         Usuario usu;
+        ParseObject obj = new ParseObject("User");
+        Usuario medico;
+        Collection<Usuario> usus;
+        Tratamiento tratar;
         Frame rootFrame;
         public AddPacTra()
         {
@@ -48,10 +53,12 @@ namespace TreatSelf
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            usu = e.Parameter as Usuario;
-
-            Nombre.Text = usu.Nombre+" "+usu.Apellido;
-            
+            usus = new Collection<Usuario>();
+            usus = e.Parameter as Collection<Usuario>;
+            usu = usus.ElementAt<Usuario>(1);
+            medico = usus.ElementAt<Usuario>(0);
+            llenarDatos();
+            Nombre.Text = usu.Nombre + " " + usu.Apellido;
             Correo.Text = usu.Correo;
             Cedula.Text = ""+usu.Cedula;
             Telefono.Text = ""+usu.Telefono;              
@@ -61,43 +68,103 @@ namespace TreatSelf
 
         public ObservableCollection<Tratamiento> Tratas1
         {
+
             get {
-                if (tratas1 == null)
-                {
-                    tratas1 = new ObservableCollection<Tratamiento>();
-                    Tratamiento trata1 = new Tratamiento() { NomTratamiento = "Trata3", Descripcion = "Descripcion3", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-                    Tratamiento trata2 = new Tratamiento() { NomTratamiento = "Trata4", Descripcion = "Descripcion4", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-                    Tratamiento trata3 = new Tratamiento() { NomTratamiento = "Trata5", Descripcion = "Descripcion5", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-
-                    tratas1.Add(trata1);
-                    tratas1.Add(trata2);
-                    tratas1.Add(trata3);
-                }
-
+                
                 return tratas1; }
             set { tratas1 = value; }
         }
+
+
+        public async void llenarDatos()
+        {       
+                tratas1 = new ObservableCollection<Tratamiento>();
+            tratas2 = new ObservableCollection<Tratamiento>();
+            //Tratamiento trata1 = new Tratamiento() { NomTratamiento = "Trata1", Descripcion = "Descripcion1", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
+            //tratas2.Add(trata1);
+                Tratamiento trata;
+                var query = from UsuarioSelected in ParseObject.GetQuery("Tratamiento")
+                            where UsuarioSelected.Get<string>("MedicoId") == medico.Id
+                            select UsuarioSelected;
+                var final = await query.FindAsync();
+                foreach (var obj in final)
+                {
+                        trata = new Tratamiento();
+                        trata.Id = obj.ObjectId;
+                        trata.Fechainicio = (DateTime)obj.UpdatedAt;
+                        trata.Fechafin = obj.Get<DateTime>("FechaFin");
+                        trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
+                        trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
+                        trata.Descripcion = obj.Get<string>("Descripcion");
+                        if (obj.Get<string>("paciente") == usu.Id)
+                        {
+                        tratas1.Add(trata);
+                        }
+                else if (obj.Get<string>("paciente") == medico.Id)
+                {
+                    tratas2.Add(trata);
+                }
+
+            }
+        }
+        
 
         private ObservableCollection<Tratamiento> tratas2;
 
         public ObservableCollection<Tratamiento> Tratas2
         {
             get {
-                    if(tratas2 == null)
-                {
-                    tratas2 = new ObservableCollection<Tratamiento>();
-                    Tratamiento trata1 = new Tratamiento() {NomTratamiento="Trata1",Descripcion="Descripcion1",Fechainicio= DateTime.Now, Fechacontrol= DateTime.Now, Fechafin= DateTime.Now };
-                    Tratamiento trata2 = new Tratamiento() { NomTratamiento = "Trata2", Descripcion = "Descripcion2", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-                    Tratamiento trata3 = new Tratamiento() { NomTratamiento = "Trata3", Descripcion = "Descripcion3", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-
-                    tratas2.Add(trata1);
-                    tratas2.Add(trata2);
-                    tratas2.Add(trata3);
-                }
                 return tratas2; }
             set { tratas2 = value; }
         }
 
+        private async void asociar(object sender, RoutedEventArgs e)
+        {
+            var trata = new ParseObject("Tratamiento");
+            trata.ObjectId = tratar.Id;
+            trata["Descripcion"] = desc.Text;
+            trata["FechaFin"] = fini.Date.Date;
+            trata["FechaControl"] = ffin.Date.Date;
+            
+            await trata.SaveAsync();
+            //            nomtra.Text = tratar.Descripcion;
+        }
 
+        private void SeleccionarTrataAsociado(object sender, SelectionChangedEventArgs e)
+        {
+            
+            tratar = ((sender as ListBox).SelectedItem as Tratamiento);
+        }
+
+        private void Asociar1(object sender, SelectionChangedEventArgs e)
+        {
+            tratar = ((sender as ListBox).SelectedItem as Tratamiento);
+        }
+
+        private async void Asoci(object sender, RoutedEventArgs e)
+        {
+            var trata = new ParseObject("Tratamiento");
+
+            trata["Nomtratamiento"] = nomtra1.Text;;
+            trata["Descripcion"] = desc1.Text;
+            trata["FechaFin"] = fini1.Date.Date;
+            trata["FechaControl"] = ffin1.Date.Date;
+            trata["MedicoId"] = medico.Id;
+            trata["paciente"] = usu.Id;
+
+
+            await trata.SaveAsync();
+            llenarDatos();
+
+        }
+
+        private async void borrarTratamientodePaci(object sender, RoutedEventArgs e)
+        {
+            var trata = new ParseObject("Tratamiento");
+            trata.ObjectId = tratar.Id;
+            await trata.DeleteAsync();
+            tratas1.Remove(tratar);
+            
+        }
     }
 }

@@ -27,10 +27,12 @@ namespace TreatSelf
     /// </summary>
     public sealed partial class Medico : Page
     {
+        Usuario usu;
         public Medico()
         {
             this.InitializeComponent();
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
+            
             //tu.Text = MainPage.log.Nombre + " " + MainPage.log.Apellido;
         }
 
@@ -62,16 +64,22 @@ namespace TreatSelf
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility
               = AppViewBackButtonVisibility.Collapsed;
             listaPaci.SelectedIndex = -1;
+            usu = e.Parameter as Usuario;
+            tu.Text = usu.Nombre + " " +usu.Apellido;
+            llenar();
         }
 
-        private void listaNoPaci_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void listaNoPaci_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
             Usuario lbi1 = ((sender as ListBox).SelectedItem as Usuario);
-            int i = listaNoPaci.SelectedIndex;
+            ParseObject appointment = new ParseObject("MedPac");
+            appointment["Medico"] = usu.Id;
+            appointment["Paciente"] = lbi1.Id;
+            await appointment.SaveAsync();
             data.Add(lbi1);
             data1.Remove(lbi1);
-            
+
             //((ObservableCollection<Usuario>)listaNoPaci.ItemsSource).Remove(lbi1);
             //tb.Text = "Cantidad: " + i;
         }
@@ -82,7 +90,6 @@ namespace TreatSelf
         {
             get
             {
-                llenar();
                 return data;
             }
             set
@@ -94,58 +101,73 @@ namespace TreatSelf
 
         public async void llenar()
         {
-            if (data == null)
-            {
                 data = new ObservableCollection<Usuario>();
-                /*Usuario usu1 = new Usuario() { Apellido = "Guzman", Nombre = "David", Cedula = "06102038", Correo = "davidguzman@unicauca.edu.co", Telefono = 3184105690 };
-                Usuario usu2 = new Usuario() { Apellido = "Guzman", Nombre = "Karen", Cedula = "8302615", Correo = "karenguzman@unicauca.edu.co", Telefono = 31231232 };
-                Usuario usu3 = new Usuario() { Apellido = "Delgado", Nombre = "Fanny", Cedula = "3631212", Correo = "fannydelgado@unicauca.edu.co", Telefono = 312312312 };
-                data.Add(usu1);
-                data.Add(usu2);
-                data.Add(usu3);*/
-                var query = from UsuarioSelected in ParseObject.GetQuery("User")
-                            where UsuarioSelected.Get<string>("username") != ""
-                            select UsuarioSelected;
-                var final = await query.FindAsync();
-                Usuario log;
+                data1 = new ObservableCollection<Usuario>();
+            var query = from UsuarioSelected in ParseObject.GetQuery("User")
+                        where UsuarioSelected.Get<string>("perfil") == "paciente"
+                        select UsuarioSelected;
+            var final = await query.FindAsync();
+
+            var query1 = from PacMed in ParseObject.GetQuery("MedPac")
+                         where PacMed.Get<string>("Medico") == usu.Id
+                         select PacMed;
+            var final1 = await query1.FindAsync();
+
+            Usuario log;
+            if (final1.Count() == 0)
+            {
                 foreach (var obj in final)
                 {
                     log = new Usuario();
                     log.Id = obj.ObjectId;
-                    log.Correo = obj.Get<string>("username");
+                    log.Correo = obj.Get<string>("Nombre");
                     log.Nombre = obj.Get<string>("Nombre");
                     log.Apellido = obj.Get<string>("Apellido");
                     log.Cedula = obj.Get<string>("Cedula");
                     log.Password = obj.Get<string>("password");
                     log.Perfil = obj.Get<string>("perfil");
                     log.Username = obj.Get<string>("username");
-                    data.Add(log);
+                    data1.Add(log);
+                }
+            }
+            else
+            {
+                foreach (var obj in final)
+                {
+                    log = new Usuario();
+                    log.Id = obj.ObjectId;
+                    log.Correo = obj.Get<string>("Nombre");
+                    log.Nombre = obj.Get<string>("Nombre");
+                    log.Apellido = obj.Get<string>("Apellido");
+                    log.Cedula = obj.Get<string>("Cedula");
+                    log.Password = obj.Get<string>("password");
+                    log.Perfil = obj.Get<string>("perfil");
+                    log.Username = obj.Get<string>("username");
+                    data1.Add(log);
+                    foreach (var obj1 in final1)
+                    {
+                        
+                        if (obj1.Get<string>("Paciente") == obj.ObjectId)
+                        {
+                            data1.Remove(log);
+                            data.Add(log);
+                        }
+                       
+                    }
                 }
 
-
             }
+        
         }
+        
 
-        public static ObservableCollection<Usuario> data1;
+       public static ObservableCollection<Usuario> data1;
 
         public ObservableCollection<Usuario> Data1
         {
             get
             {
-                if (data1 == null)
-                {
-                    data1 = new ObservableCollection<Usuario>();
-                    Usuario usu1 = new Usuario() { Apellido = "Guzman", Nombre = "Paola", Cedula = "5634534", Correo = "paolaguzman@unicauca.edu.co", Telefono = 645664654 };
-                    Usuario usu2 = new Usuario() { Apellido = "Delgado", Nombre = "Isabela", Cedula = "543543", Correo = "isadelgado@unicauca.edu.co", Telefono = 654654546 };
-                    Usuario usu3 = new Usuario() { Apellido = "Guzman", Nombre = "Oscar", Cedula = "432432", Correo = "oscarguzman@unicauca.edu.co", Telefono = 86876867 };
-                    data1.Add(usu1);
-                    data1.Add(usu2);
-                    data1.Add(usu3);
-
-
-                }
-
-                return data1;
+               return data1;
             }
             set { data1 = value; }
         }
@@ -168,8 +190,11 @@ namespace TreatSelf
             if (listaPaci.SelectedIndex != -1)
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                Usuario lbi1 = ((sender as ListBox).SelectedItem as Usuario);
-                rootFrame.Navigate(typeof(AddPacTra), data.ElementAt(listaPaci.SelectedIndex));
+                //Usuario lbi1 = ((sender as ListBox).SelectedItem as Usuario);
+                Collection<Usuario> usuarios = new Collection<Usuario>();
+                usuarios.Add(usu);
+                usuarios.Add(data.ElementAt(listaPaci.SelectedIndex));
+                rootFrame.Navigate(typeof(AddPacTra), usuarios);
             }
         }
 
@@ -182,11 +207,11 @@ namespace TreatSelf
                 switch (it.Name)
                 {
                     case "Tratamientos":
-                        rootFrame.Navigate(typeof(Tratamientos));
+                        rootFrame.Navigate(typeof(Tratamientos),usu);
                         break;
 
                     case "Mi información":
-
+                        rootFrame.Navigate(typeof(MiInformacion), usu);
                         break;
                 }
             }
@@ -195,7 +220,7 @@ namespace TreatSelf
         private void toAddTratamiento(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(AddTratamiento));
+            rootFrame.Navigate(typeof(AddTratamiento),usu);
         }
     }
 }

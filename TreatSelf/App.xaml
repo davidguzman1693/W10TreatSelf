@@ -9,7 +9,6 @@
     >
     <Application.Resources>
         <models:Usuario x:Key="usuario"/>
-        <models:Usuarios x:Key="usuarios"/>
         <models:Item x:Key="item"/>
         <models:Tratamiento x:Key="tratamiento"/>
         <models:TratamientoConverter x:Key="tratamientoConverter"/>

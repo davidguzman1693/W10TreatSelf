@@ -24,7 +24,7 @@ namespace TreatSelf
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public static Usuario log;
+        public Usuario log;
         public MainPage()
         {
             this.InitializeComponent();
@@ -60,22 +60,37 @@ namespace TreatSelf
         {
             var query = from UsuarioSelected in ParseObject.GetQuery("User")
                         where UsuarioSelected.Get<string>("username") == user.Text
+                        where UsuarioSelected.Get<string>("password") == pass.Password 
                         select UsuarioSelected;
-            var final = await query.FindAsync();
-            foreach(var obj in final)
-            {
+            ParseObject obj = await query.FirstAsync();
+            
                 log = new Usuario();
                 log.Id = obj.ObjectId;
+                log.Correo = obj.Get<string>("email");
                 log.Nombre = obj.Get<string>("Nombre");
                 log.Apellido = obj.Get<string>("Apellido");
                 log.Cedula= obj.Get<string>("Cedula");
                 log.Password= obj.Get<string>("password");
                 log.Perfil= obj.Get<string>("perfil");
                 log.Username= obj.Get<string>("username");
-            }
+                log.Telefono = obj.Get<uint>("telefono");
 
-            Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(Medico));
+            if (log.Perfil=="medico")
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(Medico), log);
+            }
+            else if (log.Perfil=="paciente")
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(Paciente),log);
+            }
+            else
+            {
+
+            }
+            /*Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Medico));*/
 
         }
     }

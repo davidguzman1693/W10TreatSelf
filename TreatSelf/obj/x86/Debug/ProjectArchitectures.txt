@@ -1,1 +1,1 @@
-C:\Users\david\Documents\Visual Studio 2015\Projects\TreatSelf\TreatSelf\TreatSelf.csproj;x86
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\TreatSelf.csproj;x86

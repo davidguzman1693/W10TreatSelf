@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parse;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -24,34 +25,56 @@ namespace TreatSelf
     /// </summary>
     public sealed partial class Tratamientos : Page
     {
+        Usuario usu;
         public Tratamientos()
         {
             this.InitializeComponent();
         }
 
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            usu = e.Parameter as Usuario;
+        }
         private ObservableCollection<Tratamiento> tratas1;
 
         public ObservableCollection<Tratamiento> Tratas1
         {
             get
             {
-                if (tratas1 == null)
-                {
-                    tratas1 = new ObservableCollection<Tratamiento>();
-                    Tratamiento trata1 = new Tratamiento() { NomTratamiento = "Trata3", Descripcion = "Descripcion3", Fechainicio = DateTime.Now , Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-                    Tratamiento trata2 = new Tratamiento() { NomTratamiento = "Trata4", Descripcion = "Descripcion4", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-                    Tratamiento trata3 = new Tratamiento() { NomTratamiento = "Trata5", Descripcion = "Descripcion5", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
-
-                    tratas1.Add(trata1);
-                    tratas1.Add(trata2);
-                    tratas1.Add(trata3);
-                }
+                listarTratamientos();
+               
 
                 return tratas1;
             }
             set { tratas1 = value; }
         }
 
+        public async void listarTratamientos()
+        {
+            if (tratas1 == null)
+            {
+                tratas1 = new ObservableCollection<Tratamiento>();
+                Tratamiento trata = new Tratamiento();
+                var query = from UsuarioSelected in ParseObject.GetQuery("Tratamiento")
+                            where UsuarioSelected.Get<string>("MedicoId") == usu.Id
+                            where UsuarioSelected.Get<string>("paciente") == usu.Id
+                            select UsuarioSelected;
+                var final = await query.FindAsync();
+                foreach (var obj in final) {
+                    
+                        trata = new Tratamiento();
+                        trata.Id = obj.ObjectId;
+                        trata.Fechainicio = (DateTime) obj.UpdatedAt;
+                        trata.Fechafin = obj.Get<DateTime>("FechaFin");
+                        trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
+                        trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
+                        trata.Descripcion = obj.Get<string>("Descripcion");
+                        tratas1.Add(trata);
+                    
+                }
+            }
+        }
         private ObservableCollection<Item> menulist;
         public ObservableCollection<Item> Menulist
         {
@@ -83,11 +106,11 @@ namespace TreatSelf
             switch (it.Name)
             {
                 case "Pacientes":
-                    rootFrame.Navigate(typeof(Medico));
+                    rootFrame.Navigate(typeof(Medico),usu);
                     break;
 
                 case "Mi información":
-
+                    rootFrame.Navigate(typeof(MiInformacion), usu);
                     break;
             }
         }
@@ -102,6 +125,12 @@ namespace TreatSelf
             {
                 panel1.IsPaneOpen = true;
             }
+        }
+
+        private void goToAddTratamiento(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(AddTratamiento), usu);
         }
     }
 

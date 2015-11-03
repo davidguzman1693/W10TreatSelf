@@ -137,24 +137,24 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "String";
             _typeNameTable[3] = "UInt32";
-            _typeNameTable[4] = "TreatSelf.Models.Usuarios";
-            _typeNameTable[5] = "TreatSelf.Models.Item";
-            _typeNameTable[6] = "TreatSelf.Models.Tratamiento";
-            _typeNameTable[7] = "System.DateTime";
-            _typeNameTable[8] = "System.ValueType";
-            _typeNameTable[9] = "TreatSelf.Models.TratamientoConverter";
-            _typeNameTable[10] = "TreatSelf.AddPacTra";
-            _typeNameTable[11] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[12] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[13] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>";
-            _typeNameTable[14] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Tratamiento>";
-            _typeNameTable[15] = "TreatSelf.AddTratamiento";
-            _typeNameTable[16] = "TreatSelf.MainPage";
-            _typeNameTable[17] = "TreatSelf.Medico";
-            _typeNameTable[18] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>";
-            _typeNameTable[19] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Item>";
-            _typeNameTable[20] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>";
-            _typeNameTable[21] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Usuario>";
+            _typeNameTable[4] = "TreatSelf.Models.Item";
+            _typeNameTable[5] = "TreatSelf.Models.Tratamiento";
+            _typeNameTable[6] = "System.DateTime";
+            _typeNameTable[7] = "System.ValueType";
+            _typeNameTable[8] = "TreatSelf.Models.TratamientoConverter";
+            _typeNameTable[9] = "TreatSelf.AddPacTra";
+            _typeNameTable[10] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[11] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[12] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>";
+            _typeNameTable[13] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Tratamiento>";
+            _typeNameTable[14] = "TreatSelf.AddTratamiento";
+            _typeNameTable[15] = "TreatSelf.MainPage";
+            _typeNameTable[16] = "TreatSelf.Medico";
+            _typeNameTable[17] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>";
+            _typeNameTable[18] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Item>";
+            _typeNameTable[19] = "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>";
+            _typeNameTable[20] = "System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Usuario>";
+            _typeNameTable[21] = "TreatSelf.MiInformacion";
             _typeNameTable[22] = "TreatSelf.Paciente";
             _typeNameTable[23] = "TreatSelf.Tratamientos";
 
@@ -163,24 +163,24 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::System.String);
             _typeTable[3] = typeof(global::System.UInt32);
-            _typeTable[4] = typeof(global::TreatSelf.Models.Usuarios);
-            _typeTable[5] = typeof(global::TreatSelf.Models.Item);
-            _typeTable[6] = typeof(global::TreatSelf.Models.Tratamiento);
-            _typeTable[7] = typeof(global::System.DateTime);
-            _typeTable[8] = typeof(global::System.ValueType);
-            _typeTable[9] = typeof(global::TreatSelf.Models.TratamientoConverter);
-            _typeTable[10] = typeof(global::TreatSelf.AddPacTra);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[13] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>);
-            _typeTable[14] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Tratamiento>);
-            _typeTable[15] = typeof(global::TreatSelf.AddTratamiento);
-            _typeTable[16] = typeof(global::TreatSelf.MainPage);
-            _typeTable[17] = typeof(global::TreatSelf.Medico);
-            _typeTable[18] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>);
-            _typeTable[19] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Item>);
-            _typeTable[20] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>);
-            _typeTable[21] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Usuario>);
+            _typeTable[4] = typeof(global::TreatSelf.Models.Item);
+            _typeTable[5] = typeof(global::TreatSelf.Models.Tratamiento);
+            _typeTable[6] = typeof(global::System.DateTime);
+            _typeTable[7] = typeof(global::System.ValueType);
+            _typeTable[8] = typeof(global::TreatSelf.Models.TratamientoConverter);
+            _typeTable[9] = typeof(global::TreatSelf.AddPacTra);
+            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[12] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>);
+            _typeTable[13] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Tratamiento>);
+            _typeTable[14] = typeof(global::TreatSelf.AddTratamiento);
+            _typeTable[15] = typeof(global::TreatSelf.MainPage);
+            _typeTable[16] = typeof(global::TreatSelf.Medico);
+            _typeTable[17] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>);
+            _typeTable[18] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Item>);
+            _typeTable[19] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>);
+            _typeTable[20] = typeof(global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Usuario>);
+            _typeTable[21] = typeof(global::TreatSelf.MiInformacion);
             _typeTable[22] = typeof(global::TreatSelf.Paciente);
             _typeTable[23] = typeof(global::TreatSelf.Tratamientos);
         }
@@ -218,53 +218,53 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
         }
 
         private object Activate_0_Usuario() { return new global::TreatSelf.Models.Usuario(); }
-        private object Activate_4_Usuarios() { return new global::TreatSelf.Models.Usuarios(); }
-        private object Activate_5_Item() { return new global::TreatSelf.Models.Item(); }
-        private object Activate_6_Tratamiento() { return new global::TreatSelf.Models.Tratamiento(); }
-        private object Activate_9_TratamientoConverter() { return new global::TreatSelf.Models.TratamientoConverter(); }
-        private object Activate_10_AddPacTra() { return new global::TreatSelf.AddPacTra(); }
-        private object Activate_13_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>(); }
-        private object Activate_14_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Tratamiento>(); }
-        private object Activate_15_AddTratamiento() { return new global::TreatSelf.AddTratamiento(); }
-        private object Activate_16_MainPage() { return new global::TreatSelf.MainPage(); }
-        private object Activate_17_Medico() { return new global::TreatSelf.Medico(); }
-        private object Activate_18_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>(); }
-        private object Activate_19_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Item>(); }
-        private object Activate_20_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>(); }
-        private object Activate_21_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Usuario>(); }
+        private object Activate_4_Item() { return new global::TreatSelf.Models.Item(); }
+        private object Activate_5_Tratamiento() { return new global::TreatSelf.Models.Tratamiento(); }
+        private object Activate_8_TratamientoConverter() { return new global::TreatSelf.Models.TratamientoConverter(); }
+        private object Activate_9_AddPacTra() { return new global::TreatSelf.AddPacTra(); }
+        private object Activate_12_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>(); }
+        private object Activate_13_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Tratamiento>(); }
+        private object Activate_14_AddTratamiento() { return new global::TreatSelf.AddTratamiento(); }
+        private object Activate_15_MainPage() { return new global::TreatSelf.MainPage(); }
+        private object Activate_16_Medico() { return new global::TreatSelf.Medico(); }
+        private object Activate_17_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>(); }
+        private object Activate_18_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Item>(); }
+        private object Activate_19_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>(); }
+        private object Activate_20_Collection() { return new global::System.Collections.ObjectModel.Collection<global::TreatSelf.Models.Usuario>(); }
+        private object Activate_21_MiInformacion() { return new global::TreatSelf.MiInformacion(); }
         private object Activate_22_Paciente() { return new global::TreatSelf.Paciente(); }
         private object Activate_23_Tratamientos() { return new global::TreatSelf.Tratamientos(); }
-        private void VectorAdd_13_ObservableCollection(object instance, object item)
+        private void VectorAdd_12_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Tratamiento>)instance;
             var newItem = (global::TreatSelf.Models.Tratamiento)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_14_Collection(object instance, object item)
+        private void VectorAdd_13_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Tratamiento>)instance;
             var newItem = (global::TreatSelf.Models.Tratamiento)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_18_ObservableCollection(object instance, object item)
+        private void VectorAdd_17_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Item>)instance;
             var newItem = (global::TreatSelf.Models.Item)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_19_Collection(object instance, object item)
+        private void VectorAdd_18_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Item>)instance;
             var newItem = (global::TreatSelf.Models.Item)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_20_ObservableCollection(object instance, object item)
+        private void VectorAdd_19_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Usuario>)instance;
             var newItem = (global::TreatSelf.Models.Usuario)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_21_Collection(object instance, object item)
+        private void VectorAdd_20_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::TreatSelf.Models.Usuario>)instance;
             var newItem = (global::TreatSelf.Models.Usuario)item;
@@ -309,25 +309,18 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 xamlType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  TreatSelf.Models.Usuarios
+            case 4:   //  TreatSelf.Models.Item
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_4_Usuarios;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 5:   //  TreatSelf.Models.Item
-                userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_5_Item;
+                userType.Activator = Activate_4_Item;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Icon");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  TreatSelf.Models.Tratamiento
+            case 5:   //  TreatSelf.Models.Tratamiento
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_6_Tratamiento;
+                userType.Activator = Activate_5_Tratamiento;
                 userType.AddMemberName("Id");
                 userType.AddMemberName("NomTratamiento");
                 userType.AddMemberName("Descripcion");
@@ -338,72 +331,72 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  System.DateTime
+            case 6:   //  System.DateTime
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 8:   //  System.ValueType
+            case 7:   //  System.ValueType
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 9:   //  TreatSelf.Models.TratamientoConverter
+            case 8:   //  TreatSelf.Models.TratamientoConverter
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_TratamientoConverter;
+                userType.Activator = Activate_8_TratamientoConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  TreatSelf.AddPacTra
+            case 9:   //  TreatSelf.AddPacTra
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_AddPacTra;
+                userType.Activator = Activate_9_AddPacTra;
                 userType.AddMemberName("Tratas1");
                 userType.AddMemberName("Tratas2");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Windows.UI.Xaml.Controls.Page
+            case 10:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  Windows.UI.Xaml.Controls.UserControl
+            case 11:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>
+            case 12:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Tratamiento>"));
-                userType.CollectionAdd = VectorAdd_13_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_12_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Tratamiento>
+            case 13:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Tratamiento>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_14_Collection;
-                userType.CollectionAdd = VectorAdd_14_Collection;
+                userType.Activator = Activate_13_Collection;
+                userType.CollectionAdd = VectorAdd_13_Collection;
                 xamlType = userType;
                 break;
 
-            case 15:   //  TreatSelf.AddTratamiento
+            case 14:   //  TreatSelf.AddTratamiento
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_AddTratamiento;
+                userType.Activator = Activate_14_AddTratamiento;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  TreatSelf.MainPage
+            case 15:   //  TreatSelf.MainPage
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_MainPage;
+                userType.Activator = Activate_15_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  TreatSelf.Medico
+            case 16:   //  TreatSelf.Medico
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_Medico;
+                userType.Activator = Activate_16_Medico;
                 userType.AddMemberName("Menulist");
                 userType.AddMemberName("Data");
                 userType.AddMemberName("Data1");
@@ -411,31 +404,39 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 18:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>
+            case 17:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Item>"));
-                userType.CollectionAdd = VectorAdd_18_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_17_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 19:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Item>
+            case 18:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Item>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_19_Collection;
-                userType.CollectionAdd = VectorAdd_19_Collection;
+                userType.Activator = Activate_18_Collection;
+                userType.CollectionAdd = VectorAdd_18_Collection;
                 xamlType = userType;
                 break;
 
-            case 20:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>
+            case 19:   //  System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Usuario>"));
-                userType.CollectionAdd = VectorAdd_20_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_19_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 21:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Usuario>
+            case 20:   //  System.Collections.ObjectModel.Collection`1<TreatSelf.Models.Usuario>
                 userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_21_Collection;
-                userType.CollectionAdd = VectorAdd_21_Collection;
+                userType.Activator = Activate_20_Collection;
+                userType.CollectionAdd = VectorAdd_20_Collection;
+                xamlType = userType;
+                break;
+
+            case 21:   //  TreatSelf.MiInformacion
+                userType = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_21_MiInformacion;
+                userType.AddMemberName("Menulist");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -680,32 +681,42 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
             var that = (global::TreatSelf.Medico)instance;
             that.Data1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>)Value;
         }
-        private object get_22_Paciente_Menulist(object instance)
+        private object get_22_MiInformacion_Menulist(object instance)
+        {
+            var that = (global::TreatSelf.MiInformacion)instance;
+            return that.Menulist;
+        }
+        private void set_22_MiInformacion_Menulist(object instance, object Value)
+        {
+            var that = (global::TreatSelf.MiInformacion)instance;
+            that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
+        }
+        private object get_23_Paciente_Menulist(object instance)
         {
             var that = (global::TreatSelf.Paciente)instance;
             return that.Menulist;
         }
-        private void set_22_Paciente_Menulist(object instance, object Value)
+        private void set_23_Paciente_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.Paciente)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
         }
-        private object get_23_Tratamientos_Tratas1(object instance)
+        private object get_24_Tratamientos_Tratas1(object instance)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             return that.Tratas1;
         }
-        private void set_23_Tratamientos_Tratas1(object instance, object Value)
+        private void set_24_Tratamientos_Tratas1(object instance, object Value)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             that.Tratas1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>)Value;
         }
-        private object get_24_Tratamientos_Menulist(object instance)
+        private object get_25_Tratamientos_Menulist(object instance)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             return that.Menulist;
         }
-        private void set_24_Tratamientos_Menulist(object instance, object Value)
+        private void set_25_Tratamientos_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
@@ -850,23 +861,29 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 xamlMember.Getter = get_21_Medico_Data1;
                 xamlMember.Setter = set_21_Medico_Data1;
                 break;
+            case "TreatSelf.MiInformacion.Menulist":
+                userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.MiInformacion");
+                xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
+                xamlMember.Getter = get_22_MiInformacion_Menulist;
+                xamlMember.Setter = set_22_MiInformacion_Menulist;
+                break;
             case "TreatSelf.Paciente.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Paciente");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_22_Paciente_Menulist;
-                xamlMember.Setter = set_22_Paciente_Menulist;
+                xamlMember.Getter = get_23_Paciente_Menulist;
+                xamlMember.Setter = set_23_Paciente_Menulist;
                 break;
             case "TreatSelf.Tratamientos.Tratas1":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Tratamientos");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Tratas1", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>");
-                xamlMember.Getter = get_23_Tratamientos_Tratas1;
-                xamlMember.Setter = set_23_Tratamientos_Tratas1;
+                xamlMember.Getter = get_24_Tratamientos_Tratas1;
+                xamlMember.Setter = set_24_Tratamientos_Tratas1;
                 break;
             case "TreatSelf.Tratamientos.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Tratamientos");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_24_Tratamientos_Menulist;
-                xamlMember.Setter = set_24_Tratamientos_Menulist;
+                xamlMember.Getter = get_25_Tratamientos_Menulist;
+                xamlMember.Setter = set_25_Tratamientos_Menulist;
                 break;
             }
             return xamlMember;

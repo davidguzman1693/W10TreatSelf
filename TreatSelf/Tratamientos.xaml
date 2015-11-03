@@ -12,7 +12,8 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton
                     Icon="Add"
-                    Label="Agregar Tratamiento" 
+                    Label="Agregar Tratamiento" Click="goToAddTratamiento" 
+                    
                     />
                 <AppBarSeparator/>
                 <AppBarToggleButton

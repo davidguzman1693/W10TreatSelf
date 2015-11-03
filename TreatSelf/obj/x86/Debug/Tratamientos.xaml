@@ -10,9 +10,10 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton
+                <AppBarButton x:ConnectionId='2'
                     Icon="Add"
-                    Label="Agregar Tratamiento" 
+                    Label="Agregar Tratamiento"                            
+                    
                     />
                 <AppBarSeparator/>
                 <AppBarToggleButton
@@ -23,7 +24,7 @@
         </CommandBar>
     </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:ConnectionId='2' 
+        <SplitView x:ConnectionId='3' 
            x:Name="panel1"
            IsPaneOpen="False"
            CompactPaneLength="50"
@@ -33,7 +34,7 @@
             >
             <SplitView.Pane>
                 <StackPanel>
-                    <Button x:ConnectionId='3' Width="50" Height="50"                  
+                    <Button x:ConnectionId='4' Width="50" Height="50"                  
                             >
                         <StackPanel>
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
@@ -41,7 +42,7 @@
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
                         </StackPanel>
                     </Button>
-                    <ListBox x:ConnectionId='4' x:Name="menu"
+                    <ListBox x:ConnectionId='5' x:Name="menu"
                                                             
                              Background="Transparent"
                              Margin="0" Padding="0"                              
@@ -49,12 +50,12 @@
                              >
                         <ListBox.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='5' Orientation="Horizontal">
-                                    <SymbolIcon x:ConnectionId='6'                        
+                                <StackPanel x:ConnectionId='6' Orientation="Horizontal">
+                                    <SymbolIcon x:ConnectionId='7'                        
                                                 Width="50" Height="50"
                                                 Foreground="GreenYellow"
                                                 />
-                                    <TextBlock x:ConnectionId='7'                      
+                                    <TextBlock x:ConnectionId='8'                      
                                                VerticalAlignment="Center"
                                                Foreground="Green"
                                                />
@@ -73,20 +74,20 @@
                         <RowDefinition Height="250"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <ListBox x:ConnectionId='8'
+                    <ListBox x:ConnectionId='9'
                                                        
                          Grid.Row="0"
                         x:Name="Tratas"
                          >
                     <ListBox.ItemTemplate>
                         <DataTemplate                                >
-                            <Border x:ConnectionId='13' BorderBrush="GreenYellow" 
+                            <Border x:ConnectionId='14' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                 <StackPanel Margin="10 0 0 0">
-                                    <TextBlock x:ConnectionId='14' Style="{StaticResource TitleTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='15' Style="{StaticResource TitleTextBlockStyle}" 
                                                                      />
-                                    <TextBlock x:ConnectionId='15' Style="{StaticResource CaptionTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='16' Style="{StaticResource CaptionTextBlockStyle}" 
                                                                    />
                                 </StackPanel>
                             </Border>
@@ -95,10 +96,10 @@
 
                 </ListBox>
                     <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=Tratas}">
-                        <TextBlock x:ConnectionId='9' x:Name="nombre1" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='10' x:Name="sabor1"  Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='11' x:Name="color1" Margin="0 0 0 10" Text="{Binding Fechainicio, Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='12' x:Name="precio1" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
+                        <TextBlock x:ConnectionId='10' x:Name="nombre1" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}"/>
+                        <TextBlock x:ConnectionId='11' x:Name="sabor1"  Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <TextBlock x:ConnectionId='12' x:Name="color1" Margin="0 0 0 10" Text="{Binding Fechainicio, Mode=TwoWay}"/>
+                        <TextBlock x:ConnectionId='13' x:Name="precio1" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
                         
                     </StackPanel>
                 </Grid>

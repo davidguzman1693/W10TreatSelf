@@ -5,13 +5,14 @@
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="SelectedItem" />
-    <RootPropertyPathName Name="Fechafin" />
+    <RootPropertyPathName Name="Fechacontrol" />
     <RootPropertyPathName Name="Fechainicio" />
     <RootPropertyPathName Name="Descripcion" />
     <RootPropertyPathName Name="NomTratamiento" />
     <RootPropertyPathName Name="Correo" />
     <RootPropertyPathName Name="Apellido" />
     <RootPropertyPathName Name="Nombre" />
+    <RootPropertyPathName Name="Fechafin" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -19,7 +20,6 @@
       <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="TreatSelf.Models.Usuario" />
-    <RootType FullName="TreatSelf.Models.Usuarios" />
     <RootType FullName="TreatSelf.Models.Item" />
     <RootType FullName="TreatSelf.Models.Tratamiento" />
     <RootType FullName="TreatSelf.Models.TratamientoConverter" />
@@ -32,13 +32,19 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="CornerRadius" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
@@ -67,15 +73,19 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
-      <RootProperty Name="Mode" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Text" />
       <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Header" />
       <RootProperty Name="Background" />
+      <RootProperty Name="InputScope" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Margin" />
@@ -92,7 +102,9 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -106,9 +118,9 @@
       <RootProperty Name="Style" />
       <RootProperty Name="Text" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Fill" />
@@ -125,10 +137,14 @@
       <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
       <RootProperty Name="OnContent" />
       <RootProperty Name="OffContent" />
@@ -164,6 +180,7 @@
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="TreatSelf.Medico" />
+    <RootType FullName="TreatSelf.MiInformacion" />
     <RootType FullName="TreatSelf.Paciente" />
     <RootType FullName="TreatSelf.Tratamientos" />
   </Roots.RootTypes>

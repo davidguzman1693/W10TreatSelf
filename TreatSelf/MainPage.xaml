@@ -10,15 +10,12 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        
 
-            
-                
-            
-                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="0">
+
+          <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="0">
                         <Border BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
@@ -36,32 +33,21 @@
                             </StackPanel>
                         </Border>
                     </RelativePanel>
-               
-            
-                    <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="1">
-                        <StackPanel Orientation="Horizontal" Width="200">
-                            <StackPanel>
-                                <TextBlock Text="Nombre " Margin="0,10,0,10" />
-                                <TextBlock Text="Apellido " Margin="0,10,0,10" />
-                                <TextBlock Text="Cedula " Margin="0,10,0,10" />
-                                <TextBlock Text="Correo " Margin="0,10,0,10" />
-                                <TextBlock Text="Telefono " Margin="0,10,0,10" />
-                                <TextBlock Text="Perfil " Margin="0,10,0,10" />
-                                <TextBlock Text="User " Margin="0,10,0,10" />
-                                <TextBlock Text="Password " Margin="0,10,0,0"  />
-                                <TextBlock Text="Perfil " Margin="0,10,0,0"  />
-                            </StackPanel>
+        
+
+        <RelativePanel Background="#2AC986"  CornerRadius="5" Padding="20" Grid.Column="1">
+                        
                             <StackPanel Width="100">
-                                <TextBox x:Name="name" PlaceholderText="Nombre" Margin="10,10,0,10" Background="Gray" />
-                                <TextBox x:Name="lastname" PlaceholderText="Apellido" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox x:Name="cedula" PlaceholderText="Cedula" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox x:Name="mail" PlaceholderText="Correo" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox x:Name="telefono" PlaceholderText="Telefono" Margin="10,10,0,10" Background="Gray"/>
-                                <TextBox x:Name="username" PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
-                                <PasswordBox x:Name="password" Margin="10,0,0,0" Background="Gray"/>
-                                <ToggleSwitch x:Name="perfil" Margin="10,0,0,0" OnContent="Medico" OffContent="Paciente" />
+                                <TextBox Header="Nombre" x:Name="name" PlaceholderText="Nombre" Margin="10,10,0,10" Background="Gray" />
+                                <TextBox Header="Apellido" x:Name="lastname" PlaceholderText="Apellido" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox Header="Cedula" x:Name="cedula" PlaceholderText="Cedula" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox Header="Correo" x:Name="mail" PlaceholderText="Correo" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox Header="Telefono" InputScope="Number" x:Name="telefono" PlaceholderText="Telefono" Margin="10,10,0,10" Background="Gray"/>
+                                <TextBox Header="Username" x:Name="username" PlaceholderText="Username" Margin="10,10,0,10" Background="Gray"/>
+                                <PasswordBox Header="Contraseña" x:Name="password" Margin="10,0,0,0" Background="Gray"/>
+                                <ToggleSwitch Header="Perfil" x:Name="perfil" Margin="10,0,0,0" OnContent="Medico" OffContent="Paciente" />
                                 <Button Content="Registrarse" Margin="0,10,0,10" Background="GhostWhite" Click="Register" />
-                            </StackPanel>
+                        
                         </StackPanel>
                     </RelativePanel>
               

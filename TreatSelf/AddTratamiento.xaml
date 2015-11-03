@@ -7,14 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBox x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}"/>
-            <TextBox x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
-            <DatePicker Name="fini" Margin="0 0 0 10"/>
-            <DatePicker x:Name="ffin" Margin="0 0 0 10"/>
+    <Grid Background="WhiteSmoke">
+        <Grid Margin="10,10,10,210" Background="#2AC986" CornerRadius="10">
             
-            <Button Content="Agregar" HorizontalAlignment="Right" Click="AgregarTratamiento"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Agregar tratamiento" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
+        <TextBlock Text="Nombre: " Grid.Row="1" Grid.Column="0" />
+        <TextBlock Text="Descripcion" Grid.Row="2" Grid.Column="0" />
+        <TextBlock Text="Fecha fin" Grid.Row="3" Grid.Column="0"  />
+        <TextBlock Text="Fecha control" Grid.Row="4" Grid.Column="0" />
+
+        <TextBox x:Name="nomtra" PlaceholderText="Tratamiento" Width="200" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
+        <TextBox x:Name="desc"  PlaceholderText="Descripcion" Width="250" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"/>
+        <DatePicker Name="fini" Margin="0 0 0 10"  Grid.Row="3" Grid.Column="1"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" >
+        <DatePicker x:Name="ffin" Margin="0 0 0 10" />
+
+                <Button Content="Agregar" HorizontalAlignment="Right" Click="AgregarTratamiento" Background="GhostWhite" />
+            </StackPanel>
+        </Grid>
+        
+               
     </Grid>
 </Page>

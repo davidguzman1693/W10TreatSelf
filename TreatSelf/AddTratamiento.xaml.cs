@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TreatSelf.Models;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -24,10 +25,12 @@ namespace TreatSelf
     /// </summary>
     public sealed partial class AddTratamiento : Page
     {
+        Usuario usu;
         Frame rootFrame;
         public AddTratamiento()
         {
             this.InitializeComponent();
+            rootFrame = Window.Current.Content as Frame;
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility
                = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += AddTratamiento_BackRequested;
@@ -42,16 +45,23 @@ namespace TreatSelf
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            usu = e.Parameter as Usuario;
+        }
+
         private async void AgregarTratamiento(object sender, RoutedEventArgs e)
         {
             ParseObject appointment = new ParseObject("Tratamiento");
+            
             appointment["Nomtratamiento"] = nomtra.Text;
             appointment["Descripcion"] = desc.Text;
             appointment["FechaControl"] = fini.Date.Date;
             appointment["FechaFin"] = ffin.Date.Date;
-
+            appointment["MedicoId"] = usu.Id;
+            appointment["paciente"] = usu.Id;
             await appointment.SaveAsync();
-
+            
         }
     }
 }

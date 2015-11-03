@@ -27,7 +27,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
         <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
-        <TextBlock x:ConnectionId='11' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}" Text="Hola" />
+        <TextBlock x:ConnectionId='11' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
         </StackPanel>
         <SplitView x:ConnectionId='3' 
            x:Name="panel1"
