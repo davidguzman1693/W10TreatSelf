@@ -7,14 +7,33 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:TreatSelf.Models"
     mc:Ignorable="d">
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton
+                    Icon="Add"
+                    Label="Agregar Tratamiento"
+                    
+                    />
+                <AppBarSeparator/>
+                <AppBarToggleButton
+                    Icon="StopSlideShow"
+                    Label="LogOut"
+                    />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='16' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+        </StackPanel>
         <SplitView x:ConnectionId='2' 
            x:Name="panel1"
            IsPaneOpen="False"
            CompactPaneLength="50"
            DisplayMode="CompactOverlay"
-           OpenPaneLength="200" Margin="0,30,0,0"
+           OpenPaneLength="200" Margin="0,64,-10,120"
             PaneBackground="#333333"
             
             >
@@ -56,10 +75,12 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <Grid Margin="10,10,10,210" Background="#2AC986" CornerRadius="10">
-
+                <StackPanel>
+                <TextBlock Text="Tu información" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
+                <Grid Width="250" Background="#2AC986" CornerRadius="10">
+                 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -72,7 +93,7 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Tu información" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
+                    
                     <TextBlock Text="Nombre: " Grid.Row="1" Grid.Column="0" />
                     <TextBlock Text="Apellido" Grid.Row="2" Grid.Column="0" />
                     <TextBlock Text="Correo" Grid.Row="3" Grid.Column="0"  />
@@ -82,19 +103,20 @@
                     <TextBlock Text="Password" Grid.Row="7" Grid.Column="0" />
 
 
-                    <TextBox x:ConnectionId='8' x:Name="nombre" Width="200" Margin="0 0 0 10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:ConnectionId='9' x:Name="apellido"  Width="200" Margin="0 0 0 10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:ConnectionId='10' x:Name="correo"  Width="200" Margin="0 0 0 10"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:ConnectionId='11' x:Name="telefono"   Width="200" Margin="0 0 0 10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:ConnectionId='12' x:Name="cedula"  Width="200" Margin="0 0 0 10"  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:ConnectionId='13' x:Name="username" Width="200" Margin="0 0 0 10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='8' x:Name="nombre" Width="150" Margin="0 0 0 10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='9' x:Name="apellido"  Width="150" Margin="0 0 0 10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='10' x:Name="correo"  Width="150" Margin="0 0 0 10"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='11' x:Name="telefono"   Width="150" Margin="0 0 0 10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='12' x:Name="cedula"  Width="150" Margin="0 0 0 10"  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left"/>
+                    <TextBox x:ConnectionId='13' x:Name="username" Width="150" Margin="0 0 0 10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left"/>
 
                     <StackPanel Grid.Row="7" Grid.Column="1" >
-                        <PasswordBox x:ConnectionId='14' x:Name="password" Width="200" Margin="0 0 0 10" HorizontalAlignment="Left"/>
+                        <PasswordBox x:ConnectionId='14' x:Name="password" Width="150" Margin="0 0 0 10" HorizontalAlignment="Left"/>
 
                         <Button x:ConnectionId='15' Content="Agregar" HorizontalAlignment="Right" Background="GhostWhite"                       />
                     </StackPanel>
                 </Grid>
+                </StackPanel>
             </SplitView.Content>
         </SplitView>
     </Grid>

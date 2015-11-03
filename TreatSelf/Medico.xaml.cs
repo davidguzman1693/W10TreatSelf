@@ -135,6 +135,7 @@ namespace TreatSelf
                 foreach (var obj in final)
                 {
                     log = new Usuario();
+                    
                     log.Id = obj.ObjectId;
                     log.Correo = obj.Get<string>("Nombre");
                     log.Nombre = obj.Get<string>("Nombre");
@@ -149,7 +150,9 @@ namespace TreatSelf
                         
                         if (obj1.Get<string>("Paciente") == obj.ObjectId)
                         {
+                            
                             data1.Remove(log);
+                            log.MedPac = obj1.ObjectId; 
                             data.Add(log);
                         }
                        
@@ -221,6 +224,12 @@ namespace TreatSelf
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(AddTratamiento),usu);
+        }
+
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
         }
     }
 }

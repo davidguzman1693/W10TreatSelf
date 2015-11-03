@@ -25,7 +25,7 @@
                                   x:Name="Cedula" HorizontalAlignment="Center" />
                         <TextBlock x:ConnectionId='24' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
-            <Button Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"/>
+            <Button x:ConnectionId='25' Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"                      />
                                       
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>

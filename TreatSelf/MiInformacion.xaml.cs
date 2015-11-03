@@ -41,6 +41,7 @@ namespace TreatSelf
             cedula.Text = usu.Cedula;
             username.Text = usu.Username;
             password.Password = usu.Password;
+            tu.Text = usu.Nombre+" "+usu.Apellido;
 
         }
 

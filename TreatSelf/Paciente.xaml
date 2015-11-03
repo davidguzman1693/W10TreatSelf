@@ -7,8 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:TreatSelf.Models"
     mc:Ignorable="d">
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                
+                <AppBarSeparator/>
+                <AppBarToggleButton
+                    Icon="StopSlideShow"
+                    Label="LogOut" Click="logout"
+                    
+                    />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+        </StackPanel>
         <SplitView 
            x:Name="panel1"
            IsPaneOpen="False"
@@ -52,6 +68,65 @@
 
                 </StackPanel>
             </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                    Text="Medico" HorizontalAlignment="Center" />
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                    x:Name="Nombre" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Telefono" HorizontalAlignment="Center" />
+                        
+
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                    </StackPanel>
+
+                    <ListBox
+                           x:Name="tratas"
+                         ItemsSource="{x:Bind Tratas1}"
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                         >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate x:DataType="models:Tratamiento">
+                                <Border BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                    <StackPanel Margin="10 0 0 0">
+                                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                       Text="{x:Bind NomTratamiento, Mode=TwoWay}"/>
+                                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" 
+                                        Text="{x:Bind Descripcion, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="1"
+                                DataContext="{Binding SelectedItem, ElementName=tratas}">
+                        <TextBox x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
+                        <TextBox x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DatePicker x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechafin, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                     </StackPanel>
+                </Grid>
+            </SplitView.Content>
         </SplitView>
     </Grid>
 </Page>

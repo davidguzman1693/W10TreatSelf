@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:TreatSelf.Models"
     mc:Ignorable="d">
+
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
@@ -15,21 +16,22 @@
                     Label="Agregar Tratamiento"                         
                     
                     />
-            <AppBarSeparator/>
-                <AppBarToggleButton
+                <AppBarSeparator/>
+                <AppBarToggleButton x:ConnectionId='3'
                     Icon="StopSlideShow"
-                    Label="LogOut"
+                    Label="LogOut"               
+                    
                     />
             </CommandBar.PrimaryCommands>
-         </CommandBar>
+        </CommandBar>
     </Page.BottomAppBar>
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
         <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
-        <TextBlock x:ConnectionId='11' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+        <TextBlock x:ConnectionId='12' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
         </StackPanel>
-        <SplitView x:ConnectionId='3' 
+        <SplitView x:ConnectionId='4' 
            x:Name="panel1"
            IsPaneOpen="False"
            CompactPaneLength="50"
@@ -41,7 +43,7 @@
             
             <SplitView.Pane>
                 <StackPanel>
-                    <Button x:ConnectionId='4' Width="50" Height="50"                  
+                    <Button x:ConnectionId='5' Width="50" Height="50"                  
                             >
                         <StackPanel>
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
@@ -49,7 +51,7 @@
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
                         </StackPanel>
                     </Button>
-                    <ListBox x:ConnectionId='5' x:Name="menu"
+                    <ListBox x:ConnectionId='6' x:Name="menu"
                                                             
                              Background="Transparent"
                              Margin="0" Padding="0"                              
@@ -57,12 +59,12 @@
                              >
                         <ListBox.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='6' Orientation="Horizontal">
-                                    <SymbolIcon x:ConnectionId='7'                        
+                                <StackPanel x:ConnectionId='7' Orientation="Horizontal">
+                                    <SymbolIcon x:ConnectionId='8'                        
                                                 Width="50" Height="50"
                                                 Foreground="GreenYellow"
                                                 />
-                                    <TextBlock x:ConnectionId='8'                      
+                                    <TextBlock x:ConnectionId='9'                      
                                                VerticalAlignment="Center"
                                                Foreground="Green"
                                                />
@@ -76,12 +78,13 @@
             </SplitView.Pane>
             
             <SplitView.Content>
-               
+                <StackPanel>
+                    <TextBlock Text="Pacientes" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
                     <Pivot>
                     <PivotItem Header="Tus pacientes" >
                         
                            
-                            <ListBox x:ConnectionId='10' x:Name="listaPaci"
+                            <ListBox x:ConnectionId='11' x:Name="listaPaci"
                                                     
                          Grid.Row="0"                                        
                                      
@@ -110,7 +113,7 @@
     </PivotItem>
                 <PivotItem Header="Mas pacientes">
                    
-                        <ListBox x:ConnectionId='9' x:Name="listaNoPaci"
+                        <ListBox x:ConnectionId='10' x:Name="listaNoPaci"
                            Grid.Row="0"
                                                       
                                                                          
@@ -141,9 +144,11 @@
                     
                 </PivotItem>
             </Pivot>
-                
+                </StackPanel>
             </SplitView.Content>
+                
         </SplitView>
+            
     </Grid>
 </Page>
 

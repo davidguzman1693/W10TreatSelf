@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parse;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -24,11 +25,50 @@ namespace TreatSelf
     /// </summary>
     public sealed partial class Paciente : Page
     {
+        Usuario usu;
         public Paciente()
         {
             this.InitializeComponent();
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            usu = e.Parameter as Usuario;
+            tu.Text = usu.Nombre + " " + usu.Apellido;
+            listarTratas();
+        }
+
+        private ObservableCollection<Tratamiento> tratas1;
+
+        public ObservableCollection<Tratamiento> Tratas1
+        {
+            get { return tratas1; }
+            set { tratas1 = value; }
+        }
+
+        public async void listarTratas()
+        {
+            tratas1 = new ObservableCollection<Tratamiento>();
+            var query = from UsuarioSelected in ParseObject.GetQuery("Tratamiento")
+                        where UsuarioSelected.Get<string>("paciente") == usu.Id
+                        select UsuarioSelected;
+            var final = await query.FindAsync();
+            Tratamiento trata;
+            foreach (var obj in final)
+            {
+                trata = new Tratamiento();
+                trata.Id = obj.ObjectId;
+                trata.Medico = obj.Get<string>("MedicoId");
+                trata.Fechainicio = obj.Get<DateTime>("FechaFin");
+                trata.Fechafin = obj.Get<DateTime>("FechaFin");
+                trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
+                trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
+                trata.Descripcion = obj.Get<string>("Descripcion");
+                tratas1.Add(trata);
+                
+        }
+        }
         private ObservableCollection<Item> menulist;
 
         public ObservableCollection<Item> Menulist
@@ -54,7 +94,42 @@ namespace TreatSelf
 
         private void putContenr(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (menu.SelectedIndex != -1)
+            {
+                Item it = ((sender as ListBox).SelectedItem as Item);
+                Frame rootFrame = Window.Current.Content as Frame;
+                switch (it.Name)
+                {
+                    case "Tratamientos":
+                        rootFrame.Navigate(typeof(Tratamientos), usu);
+                        break;
+
+                    case "Mi información":
+                        rootFrame.Navigate(typeof(MiInformacion), usu);
+                        break;
+                }
+            }
+
+        }
+
+        private async void buscarMedico(object sender, SelectionChangedEventArgs e)
+        {
+            Tratamiento tratar;
+            tratar = ((sender as ListBox).SelectedItem as Tratamiento);
+            var query = from UsuarioSelected in ParseObject.GetQuery("User")
+                        where UsuarioSelected.ObjectId == tratar.Medico
+                        select UsuarioSelected;
+            ParseObject obj = await query.FirstAsync();
+            Nombre.Text = obj.Get<string>("Nombre") + " " + obj.Get<string>("Apellido");
+            Correo.Text = obj.Get<string>("email");
+            Telefono.Text = "" + obj.Get<uint>("telefono");
+            Cedula.Text = obj.Get<string>("Cedula");
+        }
+
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
         }
     }
 }

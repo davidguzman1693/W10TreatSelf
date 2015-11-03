@@ -9,6 +9,16 @@ namespace TreatSelf.Models
 {
     public class Tratamiento: INotifyPropertyChanged
     {
+
+        private String medico;
+
+        public String Medico
+        {
+            get { return medico; }
+            set { medico = value; }
+        }
+
+
         private String id;
 
         public String Id

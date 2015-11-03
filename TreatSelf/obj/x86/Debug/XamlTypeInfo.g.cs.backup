@@ -293,7 +293,6 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 userType.AddMemberName("Perfil");
                 userType.AddMemberName("Username");
                 userType.AddMemberName("Password");
-                userType.AddMemberName("MedPac");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -554,202 +553,192 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
             var that = (global::TreatSelf.Models.Usuario)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_9_Usuario_MedPac(object instance)
-        {
-            var that = (global::TreatSelf.Models.Usuario)instance;
-            return that.MedPac;
-        }
-        private void set_9_Usuario_MedPac(object instance, object Value)
-        {
-            var that = (global::TreatSelf.Models.Usuario)instance;
-            that.MedPac = (global::System.String)Value;
-        }
-        private object get_10_Item_Name(object instance)
+        private object get_9_Item_Name(object instance)
         {
             var that = (global::TreatSelf.Models.Item)instance;
             return that.Name;
         }
-        private void set_10_Item_Name(object instance, object Value)
+        private void set_9_Item_Name(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Item)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_11_Item_Icon(object instance)
+        private object get_10_Item_Icon(object instance)
         {
             var that = (global::TreatSelf.Models.Item)instance;
             return that.Icon;
         }
-        private void set_11_Item_Icon(object instance, object Value)
+        private void set_10_Item_Icon(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Item)instance;
             that.Icon = (global::System.String)Value;
         }
-        private object get_12_Tratamiento_Medico(object instance)
+        private object get_11_Tratamiento_Medico(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Medico;
         }
-        private void set_12_Tratamiento_Medico(object instance, object Value)
+        private void set_11_Tratamiento_Medico(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Medico = (global::System.String)Value;
         }
-        private object get_13_Tratamiento_Id(object instance)
+        private object get_12_Tratamiento_Id(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Id;
         }
-        private void set_13_Tratamiento_Id(object instance, object Value)
+        private void set_12_Tratamiento_Id(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Id = (global::System.String)Value;
         }
-        private object get_14_Tratamiento_NomTratamiento(object instance)
+        private object get_13_Tratamiento_NomTratamiento(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.NomTratamiento;
         }
-        private void set_14_Tratamiento_NomTratamiento(object instance, object Value)
+        private void set_13_Tratamiento_NomTratamiento(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.NomTratamiento = (global::System.String)Value;
         }
-        private object get_15_Tratamiento_Descripcion(object instance)
+        private object get_14_Tratamiento_Descripcion(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Descripcion;
         }
-        private void set_15_Tratamiento_Descripcion(object instance, object Value)
+        private void set_14_Tratamiento_Descripcion(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Descripcion = (global::System.String)Value;
         }
-        private object get_16_Tratamiento_Fechainicio(object instance)
+        private object get_15_Tratamiento_Fechainicio(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Fechainicio;
         }
-        private void set_16_Tratamiento_Fechainicio(object instance, object Value)
+        private void set_15_Tratamiento_Fechainicio(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Fechainicio = (global::System.DateTime)Value;
         }
-        private object get_17_Tratamiento_Fechafin(object instance)
+        private object get_16_Tratamiento_Fechafin(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Fechafin;
         }
-        private void set_17_Tratamiento_Fechafin(object instance, object Value)
+        private void set_16_Tratamiento_Fechafin(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Fechafin = (global::System.DateTime)Value;
         }
-        private object get_18_Tratamiento_Fechacontrol(object instance)
+        private object get_17_Tratamiento_Fechacontrol(object instance)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             return that.Fechacontrol;
         }
-        private void set_18_Tratamiento_Fechacontrol(object instance, object Value)
+        private void set_17_Tratamiento_Fechacontrol(object instance, object Value)
         {
             var that = (global::TreatSelf.Models.Tratamiento)instance;
             that.Fechacontrol = (global::System.DateTime)Value;
         }
-        private object get_19_AddPacTra_Tratas1(object instance)
+        private object get_18_AddPacTra_Tratas1(object instance)
         {
             var that = (global::TreatSelf.AddPacTra)instance;
             return that.Tratas1;
         }
-        private void set_19_AddPacTra_Tratas1(object instance, object Value)
+        private void set_18_AddPacTra_Tratas1(object instance, object Value)
         {
             var that = (global::TreatSelf.AddPacTra)instance;
             that.Tratas1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>)Value;
         }
-        private object get_20_AddPacTra_Tratas2(object instance)
+        private object get_19_AddPacTra_Tratas2(object instance)
         {
             var that = (global::TreatSelf.AddPacTra)instance;
             return that.Tratas2;
         }
-        private void set_20_AddPacTra_Tratas2(object instance, object Value)
+        private void set_19_AddPacTra_Tratas2(object instance, object Value)
         {
             var that = (global::TreatSelf.AddPacTra)instance;
             that.Tratas2 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>)Value;
         }
-        private object get_21_Medico_Menulist(object instance)
+        private object get_20_Medico_Menulist(object instance)
         {
             var that = (global::TreatSelf.Medico)instance;
             return that.Menulist;
         }
-        private void set_21_Medico_Menulist(object instance, object Value)
+        private void set_20_Medico_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.Medico)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
         }
-        private object get_22_Medico_Data(object instance)
+        private object get_21_Medico_Data(object instance)
         {
             var that = (global::TreatSelf.Medico)instance;
             return that.Data;
         }
-        private void set_22_Medico_Data(object instance, object Value)
+        private void set_21_Medico_Data(object instance, object Value)
         {
             var that = (global::TreatSelf.Medico)instance;
             that.Data = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>)Value;
         }
-        private object get_23_Medico_Data1(object instance)
+        private object get_22_Medico_Data1(object instance)
         {
             var that = (global::TreatSelf.Medico)instance;
             return that.Data1;
         }
-        private void set_23_Medico_Data1(object instance, object Value)
+        private void set_22_Medico_Data1(object instance, object Value)
         {
             var that = (global::TreatSelf.Medico)instance;
             that.Data1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Usuario>)Value;
         }
-        private object get_24_MiInformacion_Menulist(object instance)
+        private object get_23_MiInformacion_Menulist(object instance)
         {
             var that = (global::TreatSelf.MiInformacion)instance;
             return that.Menulist;
         }
-        private void set_24_MiInformacion_Menulist(object instance, object Value)
+        private void set_23_MiInformacion_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.MiInformacion)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
         }
-        private object get_25_Paciente_Tratas1(object instance)
+        private object get_24_Paciente_Tratas1(object instance)
         {
             var that = (global::TreatSelf.Paciente)instance;
             return that.Tratas1;
         }
-        private void set_25_Paciente_Tratas1(object instance, object Value)
+        private void set_24_Paciente_Tratas1(object instance, object Value)
         {
             var that = (global::TreatSelf.Paciente)instance;
             that.Tratas1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>)Value;
         }
-        private object get_26_Paciente_Menulist(object instance)
+        private object get_25_Paciente_Menulist(object instance)
         {
             var that = (global::TreatSelf.Paciente)instance;
             return that.Menulist;
         }
-        private void set_26_Paciente_Menulist(object instance, object Value)
+        private void set_25_Paciente_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.Paciente)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
         }
-        private object get_27_Tratamientos_Tratas1(object instance)
+        private object get_26_Tratamientos_Tratas1(object instance)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             return that.Tratas1;
         }
-        private void set_27_Tratamientos_Tratas1(object instance, object Value)
+        private void set_26_Tratamientos_Tratas1(object instance, object Value)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             that.Tratas1 = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Tratamiento>)Value;
         }
-        private object get_28_Tratamientos_Menulist(object instance)
+        private object get_27_Tratamientos_Menulist(object instance)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             return that.Menulist;
         }
-        private void set_28_Tratamientos_Menulist(object instance, object Value)
+        private void set_27_Tratamientos_Menulist(object instance, object Value)
         {
             var that = (global::TreatSelf.Tratamientos)instance;
             that.Menulist = (global::System.Collections.ObjectModel.ObservableCollection<global::TreatSelf.Models.Item>)Value;
@@ -816,125 +805,119 @@ namespace TreatSelf.TreatSelf_XamlTypeInfo
                 xamlMember.Getter = get_8_Usuario_Password;
                 xamlMember.Setter = set_8_Usuario_Password;
                 break;
-            case "TreatSelf.Models.Usuario.MedPac":
-                userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Usuario");
-                xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "MedPac", "String");
-                xamlMember.Getter = get_9_Usuario_MedPac;
-                xamlMember.Setter = set_9_Usuario_MedPac;
-                break;
             case "TreatSelf.Models.Item.Name":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Item");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_10_Item_Name;
-                xamlMember.Setter = set_10_Item_Name;
+                xamlMember.Getter = get_9_Item_Name;
+                xamlMember.Setter = set_9_Item_Name;
                 break;
             case "TreatSelf.Models.Item.Icon":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Item");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Icon", "String");
-                xamlMember.Getter = get_11_Item_Icon;
-                xamlMember.Setter = set_11_Item_Icon;
+                xamlMember.Getter = get_10_Item_Icon;
+                xamlMember.Setter = set_10_Item_Icon;
                 break;
             case "TreatSelf.Models.Tratamiento.Medico":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Medico", "String");
-                xamlMember.Getter = get_12_Tratamiento_Medico;
-                xamlMember.Setter = set_12_Tratamiento_Medico;
+                xamlMember.Getter = get_11_Tratamiento_Medico;
+                xamlMember.Setter = set_11_Tratamiento_Medico;
                 break;
             case "TreatSelf.Models.Tratamiento.Id":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Id", "String");
-                xamlMember.Getter = get_13_Tratamiento_Id;
-                xamlMember.Setter = set_13_Tratamiento_Id;
+                xamlMember.Getter = get_12_Tratamiento_Id;
+                xamlMember.Setter = set_12_Tratamiento_Id;
                 break;
             case "TreatSelf.Models.Tratamiento.NomTratamiento":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "NomTratamiento", "String");
-                xamlMember.Getter = get_14_Tratamiento_NomTratamiento;
-                xamlMember.Setter = set_14_Tratamiento_NomTratamiento;
+                xamlMember.Getter = get_13_Tratamiento_NomTratamiento;
+                xamlMember.Setter = set_13_Tratamiento_NomTratamiento;
                 break;
             case "TreatSelf.Models.Tratamiento.Descripcion":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Descripcion", "String");
-                xamlMember.Getter = get_15_Tratamiento_Descripcion;
-                xamlMember.Setter = set_15_Tratamiento_Descripcion;
+                xamlMember.Getter = get_14_Tratamiento_Descripcion;
+                xamlMember.Setter = set_14_Tratamiento_Descripcion;
                 break;
             case "TreatSelf.Models.Tratamiento.Fechainicio":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Fechainicio", "System.DateTime");
-                xamlMember.Getter = get_16_Tratamiento_Fechainicio;
-                xamlMember.Setter = set_16_Tratamiento_Fechainicio;
+                xamlMember.Getter = get_15_Tratamiento_Fechainicio;
+                xamlMember.Setter = set_15_Tratamiento_Fechainicio;
                 break;
             case "TreatSelf.Models.Tratamiento.Fechafin":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Fechafin", "System.DateTime");
-                xamlMember.Getter = get_17_Tratamiento_Fechafin;
-                xamlMember.Setter = set_17_Tratamiento_Fechafin;
+                xamlMember.Getter = get_16_Tratamiento_Fechafin;
+                xamlMember.Setter = set_16_Tratamiento_Fechafin;
                 break;
             case "TreatSelf.Models.Tratamiento.Fechacontrol":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Models.Tratamiento");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Fechacontrol", "System.DateTime");
-                xamlMember.Getter = get_18_Tratamiento_Fechacontrol;
-                xamlMember.Setter = set_18_Tratamiento_Fechacontrol;
+                xamlMember.Getter = get_17_Tratamiento_Fechacontrol;
+                xamlMember.Setter = set_17_Tratamiento_Fechacontrol;
                 break;
             case "TreatSelf.AddPacTra.Tratas1":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.AddPacTra");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Tratas1", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>");
-                xamlMember.Getter = get_19_AddPacTra_Tratas1;
-                xamlMember.Setter = set_19_AddPacTra_Tratas1;
+                xamlMember.Getter = get_18_AddPacTra_Tratas1;
+                xamlMember.Setter = set_18_AddPacTra_Tratas1;
                 break;
             case "TreatSelf.AddPacTra.Tratas2":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.AddPacTra");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Tratas2", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>");
-                xamlMember.Getter = get_20_AddPacTra_Tratas2;
-                xamlMember.Setter = set_20_AddPacTra_Tratas2;
+                xamlMember.Getter = get_19_AddPacTra_Tratas2;
+                xamlMember.Setter = set_19_AddPacTra_Tratas2;
                 break;
             case "TreatSelf.Medico.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Medico");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_21_Medico_Menulist;
-                xamlMember.Setter = set_21_Medico_Menulist;
+                xamlMember.Getter = get_20_Medico_Menulist;
+                xamlMember.Setter = set_20_Medico_Menulist;
                 break;
             case "TreatSelf.Medico.Data":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Medico");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Data", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>");
-                xamlMember.Getter = get_22_Medico_Data;
-                xamlMember.Setter = set_22_Medico_Data;
+                xamlMember.Getter = get_21_Medico_Data;
+                xamlMember.Setter = set_21_Medico_Data;
                 break;
             case "TreatSelf.Medico.Data1":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Medico");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Data1", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Usuario>");
-                xamlMember.Getter = get_23_Medico_Data1;
-                xamlMember.Setter = set_23_Medico_Data1;
+                xamlMember.Getter = get_22_Medico_Data1;
+                xamlMember.Setter = set_22_Medico_Data1;
                 break;
             case "TreatSelf.MiInformacion.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.MiInformacion");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_24_MiInformacion_Menulist;
-                xamlMember.Setter = set_24_MiInformacion_Menulist;
+                xamlMember.Getter = get_23_MiInformacion_Menulist;
+                xamlMember.Setter = set_23_MiInformacion_Menulist;
                 break;
             case "TreatSelf.Paciente.Tratas1":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Paciente");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Tratas1", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>");
-                xamlMember.Getter = get_25_Paciente_Tratas1;
-                xamlMember.Setter = set_25_Paciente_Tratas1;
+                xamlMember.Getter = get_24_Paciente_Tratas1;
+                xamlMember.Setter = set_24_Paciente_Tratas1;
                 break;
             case "TreatSelf.Paciente.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Paciente");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_26_Paciente_Menulist;
-                xamlMember.Setter = set_26_Paciente_Menulist;
+                xamlMember.Getter = get_25_Paciente_Menulist;
+                xamlMember.Setter = set_25_Paciente_Menulist;
                 break;
             case "TreatSelf.Tratamientos.Tratas1":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Tratamientos");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Tratas1", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Tratamiento>");
-                xamlMember.Getter = get_27_Tratamientos_Tratas1;
-                xamlMember.Setter = set_27_Tratamientos_Tratas1;
+                xamlMember.Getter = get_26_Tratamientos_Tratas1;
+                xamlMember.Setter = set_26_Tratamientos_Tratas1;
                 break;
             case "TreatSelf.Tratamientos.Menulist":
                 userType = (global::TreatSelf.TreatSelf_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TreatSelf.Tratamientos");
                 xamlMember = new global::TreatSelf.TreatSelf_XamlTypeInfo.XamlMember(this, "Menulist", "System.Collections.ObjectModel.ObservableCollection`1<TreatSelf.Models.Item>");
-                xamlMember.Getter = get_28_Tratamientos_Menulist;
-                xamlMember.Setter = set_28_Tratamientos_Menulist;
+                xamlMember.Getter = get_27_Tratamientos_Menulist;
+                xamlMember.Setter = set_27_Tratamientos_Menulist;
                 break;
             }
             return xamlMember;

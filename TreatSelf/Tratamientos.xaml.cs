@@ -35,6 +35,7 @@ namespace TreatSelf
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             usu = e.Parameter as Usuario;
+            tu.Text = usu.Nombre+" " +usu.Apellido;
         }
         private ObservableCollection<Tratamiento> tratas1;
 

@@ -7,9 +7,25 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:TreatSelf.Models"
     mc:Ignorable="d">
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                
+                <AppBarSeparator/>
+                <AppBarToggleButton x:ConnectionId='2'
+                    Icon="StopSlideShow"
+                    Label="LogOut"               
+                    
+                    />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:ConnectionId='2' 
+        <StackPanel>
+            <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='20' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+        </StackPanel>
+        <SplitView x:ConnectionId='3' 
            x:Name="panel1"
            IsPaneOpen="False"
            CompactPaneLength="50"
@@ -27,7 +43,7 @@
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
                         </StackPanel>
                     </Button>
-                    <ListBox x:ConnectionId='3' x:Name="menu"
+                    <ListBox x:ConnectionId='4' x:Name="menu"
                                                             
                              Background="Transparent"
                              Margin="0" Padding="0"                               
@@ -35,12 +51,12 @@
                              >
                         <ListBox.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='4' Orientation="Horizontal">
-                                    <SymbolIcon x:ConnectionId='5'                        
+                                <StackPanel x:ConnectionId='5' Orientation="Horizontal">
+                                    <SymbolIcon x:ConnectionId='6'                        
                                                 Width="50" Height="50"
                                                 Foreground="GreenYellow"
                                                 />
-                                    <TextBlock x:ConnectionId='6'                      
+                                    <TextBlock x:ConnectionId='7'                      
                                                VerticalAlignment="Center"
                                                Foreground="Green"
                                                />
@@ -52,6 +68,65 @@
 
                 </StackPanel>
             </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
+                                    Text="Medico" HorizontalAlignment="Center" />
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                        <TextBlock x:ConnectionId='16' Style="{StaticResource TitleTextBlockStyle}" 
+                                    x:Name="Nombre" HorizontalAlignment="Center" />
+                        <TextBlock x:ConnectionId='17' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                        <TextBlock x:ConnectionId='18' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+                        <TextBlock x:ConnectionId='19' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Telefono" HorizontalAlignment="Center" />
+                        
+
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                    </StackPanel>
+
+                    <ListBox x:ConnectionId='8'
+                           x:Name="tratas"
+                                                       
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                         >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate                                >
+                                <Border x:ConnectionId='13' BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                    <StackPanel Margin="10 0 0 0">
+                                        <TextBlock x:ConnectionId='14' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                                  />
+                                        <TextBlock x:ConnectionId='15' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                                />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="1"
+                                DataContext="{Binding SelectedItem, ElementName=tratas}">
+                        <TextBox x:ConnectionId='9' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
+                        <TextBox x:ConnectionId='10' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DatePicker x:ConnectionId='11' x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechafin, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='12' x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                     </StackPanel>
+                </Grid>
+            </SplitView.Content>
         </SplitView>
     </Grid>
 </Page>

@@ -112,6 +112,16 @@ namespace TreatSelf.Models
             }
         }
 
+        private String medPac;
+
+        public String MedPac
+        {
+            get { return medPac; }
+            set { medPac = value;
+
+            }
+        }
+
 
 
 

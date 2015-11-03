@@ -24,6 +24,10 @@
         </CommandBar>
     </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='13' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+        </StackPanel>
         <SplitView x:ConnectionId='3' 
            x:Name="panel1"
            IsPaneOpen="False"
@@ -69,6 +73,8 @@
             </SplitView.Pane>
                 
             <SplitView.Content>
+                <StackPanel>
+                    <TextBlock Text="Tus tratamientos" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="250"/>
@@ -81,13 +87,13 @@
                          >
                     <ListBox.ItemTemplate>
                         <DataTemplate                                >
-                            <Border x:ConnectionId='14' BorderBrush="GreenYellow" 
+                            <Border x:ConnectionId='10' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                 <StackPanel Margin="10 0 0 0">
-                                    <TextBlock x:ConnectionId='15' Style="{StaticResource TitleTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='11' Style="{StaticResource TitleTextBlockStyle}" 
                                                                      />
-                                    <TextBlock x:ConnectionId='16' Style="{StaticResource CaptionTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='12' Style="{StaticResource CaptionTextBlockStyle}" 
                                                                    />
                                 </StackPanel>
                             </Border>
@@ -96,13 +102,18 @@
 
                 </ListBox>
                     <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=Tratas}">
-                        <TextBlock x:ConnectionId='10' x:Name="nombre1" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='11' x:Name="sabor1"  Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='12' x:Name="color1" Margin="0 0 0 10" Text="{Binding Fechainicio, Mode=TwoWay}"/>
-                        <TextBlock x:ConnectionId='13' x:Name="precio1" Margin="0 0 0 10" Text="{Binding Fechafin, Mode=TwoWay}"/>
-                        
-                    </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                        <TextBox IsReadOnly="True" Header="Tratamiento" Width="100" Margin="0 0 0 5" Text="{Binding NomTratamiento , Mode=TwoWay}"/>
+                        <TextBox IsReadOnly="True" Header="Descripcion" Width="150"  Margin="20 0 0 5" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox IsReadOnly="True" Header="Fecha creacion" Margin="0 0 0 5" Text="{Binding Fechainicio, Mode=TwoWay}"/>
+                                
+                            </StackPanel>
+
+                        </StackPanel>
                 </Grid>
+                </StackPanel>
             </SplitView.Content>
         </SplitView>
             

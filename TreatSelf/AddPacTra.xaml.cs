@@ -78,7 +78,7 @@ namespace TreatSelf
 
         public async void llenarDatos()
         {       
-                tratas1 = new ObservableCollection<Tratamiento>();
+            tratas1 = new ObservableCollection<Tratamiento>();
             tratas2 = new ObservableCollection<Tratamiento>();
             //Tratamiento trata1 = new Tratamiento() { NomTratamiento = "Trata1", Descripcion = "Descripcion1", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
             //tratas2.Add(trata1);
@@ -165,6 +165,20 @@ namespace TreatSelf
             await trata.DeleteAsync();
             tratas1.Remove(tratar);
             
+        }
+
+        private async void BorrarPacTra(object sender, RoutedEventArgs e)
+        {
+            var trata = new ParseObject("MedPac");
+            trata.ObjectId = usu.MedPac;
+            await trata.DeleteAsync();
+            for (int i=0; i<tratas1.Count; i++)
+            {
+                var trata1 = new ParseObject("Tratamiento");
+                trata1.ObjectId = tratas1.ElementAt(i).Id;
+                await trata1.DeleteAsync();
+            }
+            rootFrame.GoBack();
         }
     }
 }
