@@ -23,7 +23,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
-            <TextBlock x:ConnectionId='20' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='21' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
         </StackPanel>
         <SplitView x:ConnectionId='3' 
            x:Name="panel1"
@@ -90,7 +90,12 @@
                                   x:Name="Cedula" HorizontalAlignment="Center" />
                         <TextBlock x:ConnectionId='19' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
-                        
+                        <ProgressRing x:ConnectionId='20' x:Name="Esperar" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
 
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>
@@ -99,7 +104,8 @@
                            x:Name="tratas"
                                                        
                         Grid.Row="0" 
-                        Grid.Column="1"
+                        Grid.Column="1"                                  
+                        
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate                                >

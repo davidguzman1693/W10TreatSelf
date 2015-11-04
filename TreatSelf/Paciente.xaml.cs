@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using TreatSelf.Models;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -49,6 +50,9 @@ namespace TreatSelf
 
         public async void listarTratas()
         {
+            
+            DateTime fecha = DateTime.Now;
+            
             tratas1 = new ObservableCollection<Tratamiento>();
             var query = from UsuarioSelected in ParseObject.GetQuery("Tratamiento")
                         where UsuarioSelected.Get<string>("paciente") == usu.Id
@@ -57,18 +61,47 @@ namespace TreatSelf
             Tratamiento trata;
             foreach (var obj in final)
             {
+             
                 trata = new Tratamiento();
                 trata.Id = obj.ObjectId;
                 trata.Medico = obj.Get<string>("MedicoId");
-                trata.Fechainicio = obj.Get<DateTime>("FechaFin");
+                trata.Fechainicio = (DateTime)obj.UpdatedAt;
                 trata.Fechafin = obj.Get<DateTime>("FechaFin");
                 trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
                 trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
                 trata.Descripcion = obj.Get<string>("Descripcion");
                 tratas1.Add(trata);
+                if (trata.Fechacontrol.Month == fecha.Month && trata.Fechacontrol.Year == fecha.Year && trata.Fechacontrol.Day == fecha.Day)
+                {
+
+                    var dialog = new ContentDialog()
+                    {
+                        Title = "TIENES CONTROL",
+                        Content = "Tienes control medico del tratamiento "+trata.Fechacontrol.Date,
+                        
+                        MaxWidth = this.MaxWidth
+                    };
+                    dialog.PrimaryButtonText = "OK";
+                    dialog.IsPrimaryButtonEnabled = true;
+                    dialog.PrimaryButtonClick += delegate {
+                        notificar();
+                    };
+                    dialog.ShowAsync();
+
+
+
+                }
                 
         }
         }
+
+        public async void notificar()
+        {
+            var dialog = new Windows.UI.Popups.MessageDialog("Le ha dado ok");
+            dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
+            var result = await dialog.ShowAsync();
+        }
+
         private ObservableCollection<Item> menulist;
 
         public ObservableCollection<Item> Menulist
@@ -112,24 +145,35 @@ namespace TreatSelf
 
         }
 
-        private async void buscarMedico(object sender, SelectionChangedEventArgs e)
-        {
-            Tratamiento tratar;
-            tratar = ((sender as ListBox).SelectedItem as Tratamiento);
-            var query = from UsuarioSelected in ParseObject.GetQuery("User")
-                        where UsuarioSelected.ObjectId == tratar.Medico
-                        select UsuarioSelected;
-            ParseObject obj = await query.FirstAsync();
-            Nombre.Text = obj.Get<string>("Nombre") + " " + obj.Get<string>("Apellido");
-            Correo.Text = obj.Get<string>("email");
-            Telefono.Text = "" + obj.Get<uint>("telefono");
-            Cedula.Text = obj.Get<string>("Cedula");
-        }
-
+       
         private void logout(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(MainPage));
+        }
+
+        private async void BuscarElMedico(object sender, SelectionChangedEventArgs e)
+        {
+            Esperar.Visibility = Visibility.Visible;
+            Tratamiento tratar;
+            tratar = ((sender as ListBox).SelectedItem as Tratamiento);
+            try
+            {
+                var query = from UsuarioSelected in ParseObject.GetQuery("User")
+                            where UsuarioSelected.ObjectId == "DD3vNtDn8o"
+                            select UsuarioSelected;
+                ParseObject obj = await query.FirstAsync();
+                Nombre.Text = obj.Get<string>("Nombre") + " " + obj.Get<string>("Apellido");
+                Correo.Text = obj.Get<string>("email");
+                Telefono.Text = "" + obj.Get<uint>("telefono");
+                Cedula.Text = obj.Get<string>("Cedula");
+                Esperar.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                Esperar.Visibility = Visibility.Collapsed;
+
+            }
         }
     }
 }

@@ -90,7 +90,12 @@
                                   x:Name="Cedula" HorizontalAlignment="Center" />
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
-                        
+                        <ProgressRing x:Name="Esperar" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
 
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>
@@ -99,7 +104,8 @@
                            x:Name="tratas"
                          ItemsSource="{x:Bind Tratas1}"
                         Grid.Row="0" 
-                        Grid.Column="1"
+                        Grid.Column="1" SelectionChanged="BuscarElMedico"
+                        
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate x:DataType="models:Tratamiento">

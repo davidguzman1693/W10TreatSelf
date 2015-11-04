@@ -108,8 +108,8 @@
                     <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=masTratas}">
                         <TextBox x:Name="nomtra1" PlaceholderText="Nombre tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True" />
                         <TextBox x:Name="desc1" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
-                        <DatePicker x:Name="fini1" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
-                        <DatePicker x:Name="ffin1" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker Header="Fecja Inicio" x:Name="fini1" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker Header="Fecha Control" x:Name="ffin1" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
                         <Button Content="Agregar" HorizontalAlignment="Right" Click="Asoci"/>
                     </StackPanel>
                 </Grid>

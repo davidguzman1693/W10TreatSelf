@@ -1,0 +1,124 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="TreatSelf.AddPacTra"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TreatSelf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:TreatSelf.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+         
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                        <TextBlock x:ConnectionId='21' Style="{StaticResource TitleTextBlockStyle}" 
+                                    x:Name="Nombre" HorizontalAlignment="Center" />
+            <TextBlock x:ConnectionId='22' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+            <TextBlock x:ConnectionId='23' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                       
+                        <TextBlock x:ConnectionId='24' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Telefono" HorizontalAlignment="Center" />
+            <Button x:ConnectionId='25' Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"                      />
+                                      
+                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+                    </StackPanel>
+                
+
+          
+                
+                <Pivot Grid.Column="1">
+                    <PivotItem Header="Tratamientos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                       <ListBox x:ConnectionId='11'
+                           x:Name="tratas"
+                                                       
+                        Grid.Row="0"                                            
+                           ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="300"
+                         >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate                                >
+                            <Border x:ConnectionId='18' BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                <StackPanel Margin="10 0 0 0">
+                                    <TextBlock x:ConnectionId='19' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                                  />
+                                    <TextBlock x:ConnectionId='20' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                                />
+                               </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+                    <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=tratas}">
+                        <TextBox x:ConnectionId='12' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
+                        <TextBox x:ConnectionId='13' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='14' x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='15' x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:ConnectionId='16' Content="Borrar" HorizontalAlignment="Right" Margin="10,0,0,10"                                  />
+                            <Button x:ConnectionId='17' Content="Editar" HorizontalAlignment="Right"                 Margin="10,0,0,10" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+                        <PivotItem Header="Mas tratamientos">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:ConnectionId='2'
+                                                       
+                         x:Name="masTratas" 
+                        Grid.Row="0"                            
+                         ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="300"
+                         >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate                                >
+                                <Border x:ConnectionId='8' BorderBrush="GreenYellow" 
+                              HorizontalAlignment="Center" 
+                              BorderThickness="0,0,0,5" >
+                                    <StackPanel Margin="10 0 0 0">
+                                        <TextBlock x:ConnectionId='9' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                                  />
+                                        <TextBlock x:ConnectionId='10' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                                />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=masTratas}">
+                        <TextBox x:ConnectionId='3' x:Name="nomtra1" PlaceholderText="Nombre tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True" />
+                        <TextBox x:ConnectionId='4' x:Name="desc1" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='5' Header="Fecja Inicio" x:Name="fini1" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <DatePicker x:ConnectionId='6' Header="Fecha Control" x:Name="ffin1" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <Button x:ConnectionId='7' Content="Agregar" HorizontalAlignment="Right"              />
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+                    </Pivot>
+                
+            
+
+        
+    </Grid>
+</Page>
+
