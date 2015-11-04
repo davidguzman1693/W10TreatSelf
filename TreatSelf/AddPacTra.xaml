@@ -19,10 +19,11 @@
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                         <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
                                     x:Name="Nombre" HorizontalAlignment="Center" />
-                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
-                                  x:Name="Correo" HorizontalAlignment="Center" />
-                        <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Cedula" HorizontalAlignment="Center" />
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                       
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
             <Button Content="Borrar" Grid.Row="0" HorizontalAlignment="Center" Click="BorrarPacTra" />
@@ -44,6 +45,8 @@
                            x:Name="tratas"
                          ItemsSource="{x:Bind Tratas1}"
                         Grid.Row="0" SelectionChanged="SeleccionarTrataAsociado"
+                           ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="300"
                          >
                     <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="models:Tratamiento">
@@ -83,6 +86,8 @@
                          ItemsSource="{x:Bind Tratas2}"
                          x:Name="masTratas" 
                         Grid.Row="0" SelectionChanged="Asociar1"
+                         ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="300"
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate x:DataType="models:Tratamiento">

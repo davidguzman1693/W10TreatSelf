@@ -142,6 +142,7 @@ namespace TreatSelf
                     log.Apellido = obj.Get<string>("Apellido");
                     log.Cedula = obj.Get<string>("Cedula");
                     log.Password = obj.Get<string>("password");
+                    log.Telefono = obj.Get<uint>("telefono");
                     log.Perfil = obj.Get<string>("perfil");
                     log.Username = obj.Get<string>("username");
                     data1.Add(log);
@@ -196,7 +197,7 @@ namespace TreatSelf
                 //Usuario lbi1 = ((sender as ListBox).SelectedItem as Usuario);
                 Collection<Usuario> usuarios = new Collection<Usuario>();
                 usuarios.Add(usu);
-                usuarios.Add(data.ElementAt(listaPaci.SelectedIndex));
+                usuarios.Add(((sender as ListBox).SelectedItem as Usuario));
                 rootFrame.Navigate(typeof(AddPacTra), usuarios);
             }
         }

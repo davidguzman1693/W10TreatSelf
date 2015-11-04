@@ -145,17 +145,21 @@ namespace TreatSelf
         {
             var trata = new ParseObject("Tratamiento");
 
-            trata["Nomtratamiento"] = nomtra1.Text;;
+            trata["Nomtratamiento"] = nomtra1.Text;
             trata["Descripcion"] = desc1.Text;
             trata["FechaFin"] = fini1.Date.Date;
             trata["FechaControl"] = ffin1.Date.Date;
             trata["MedicoId"] = medico.Id;
             trata["paciente"] = usu.Id;
-
-
+            Tratamiento tratas = new Tratamiento();
+            
             await trata.SaveAsync();
-            llenarDatos();
-
+            tratas.Id = trata.ObjectId;
+            tratas.NomTratamiento = nomtra1.Text;
+            tratas.Descripcion = desc1.Text;
+            tratas.Fechainicio = fini1.Date.Date;
+            tratas.Fechacontrol= ffin1.Date.Date;
+            tratas1.Add(tratas);
         }
 
         private async void borrarTratamientodePaci(object sender, RoutedEventArgs e)

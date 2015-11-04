@@ -66,7 +66,7 @@
                                                 />
                                     <TextBlock Text="{x:Bind Name}" 
                                                VerticalAlignment="Center"
-                                               Foreground="Green"
+                                               Foreground="White"
                                                />
                                 </StackPanel>
                             </DataTemplate>
@@ -87,7 +87,8 @@
                             <ListBox x:Name="listaPaci"
                          ItemsSource="{x:Bind Data}"
                          Grid.Row="0" SelectionChanged="goToSelectedPaciente"
-                                     
+                         ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="250"
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -117,6 +118,8 @@
                            Grid.Row="0"
                           ItemsSource="{x:Bind Data1}"
                           SelectionChanged="listaNoPaci_SelectionChanged"
+                                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         Height="250"
                          >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>

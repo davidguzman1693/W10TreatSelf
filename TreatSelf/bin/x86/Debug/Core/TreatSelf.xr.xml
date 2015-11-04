@@ -32,9 +32,6 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="CornerRadius" />
-      <RootProperty Name="Width" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetRow" />
@@ -68,11 +65,17 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="Height" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootMethod Name="GetVerticalScrollBarVisibility" />
+      <RootMethod Name="SetVerticalScrollBarVisibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
@@ -86,9 +89,9 @@
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Header" />
       <RootProperty Name="Background" />
       <RootProperty Name="InputScope" />
+      <RootProperty Name="Header" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Margin" />
@@ -132,22 +135,25 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="TreatSelf.AddPacTra" />
-    <RootType FullName="TreatSelf.AddTratamiento" />
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
     </RootType>
+    <RootType FullName="TreatSelf.AddTratamiento" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
-      <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
-      <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
       <RootProperty Name="OnContent" />
       <RootProperty Name="OffContent" />

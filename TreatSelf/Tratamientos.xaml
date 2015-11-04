@@ -61,7 +61,7 @@
                                                 />
                                     <TextBlock Text="{x:Bind Name}" 
                                                VerticalAlignment="Center"
-                                               Foreground="Green"
+                                               Foreground="White"
                                                />
                                 </StackPanel>
                             </DataTemplate>
@@ -77,13 +77,15 @@
                     <TextBlock Text="Tus tratamientos" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <ListBox
                          ItemsSource="{x:Bind Tratas1}"
                          Grid.Row="0"
                         x:Name="Tratas"
+                        Height="150"
+                        VerticalAlignment="Top"
                          >
                     <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="models:Tratamiento">

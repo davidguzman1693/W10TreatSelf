@@ -12,13 +12,13 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton
                     Icon="Add"
-                    Label="Agregar Tratamiento"
+                    Label="Agregar Tratamiento" Click="toAddTratamiento"
                     
                     />
                 <AppBarSeparator/>
                 <AppBarToggleButton
                     Icon="StopSlideShow"
-                    Label="LogOut"
+                    Label="LogOut" Click="logout"
                     />
             </CommandBar.PrimaryCommands>
         </CommandBar>
@@ -63,7 +63,7 @@
                                                 />
                                     <TextBlock Text="{x:Bind Name}" 
                                                VerticalAlignment="Center"
-                                               Foreground="Green"
+                                               Foreground="White"
                                                />
                                 </StackPanel>
                             </DataTemplate>
@@ -77,45 +77,40 @@
             <SplitView.Content>
                 <StackPanel>
                 <TextBlock Text="Tu información" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
-                <Grid Width="250" Background="#2AC986" CornerRadius="10">
-                 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    
-                    <TextBlock Text="Nombre: " Grid.Row="1" Grid.Column="0" />
-                    <TextBlock Text="Apellido" Grid.Row="2" Grid.Column="0" />
-                    <TextBlock Text="Correo" Grid.Row="3" Grid.Column="0"  />
-                    <TextBlock Text="Telefono" Grid.Row="4" Grid.Column="0" />
-                    <TextBlock Text="Cedula" Grid.Row="5" Grid.Column="0" />
-                    <TextBlock Text="Username" Grid.Row="6" Grid.Column="0" />
-                    <TextBlock Text="Password" Grid.Row="7" Grid.Column="0" />
-
-
-                    <TextBox x:Name="nombre" Width="150" Margin="0 0 0 10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="apellido"  Width="150" Margin="0 0 0 10"  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="correo"  Width="150" Margin="0 0 0 10"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="telefono"   Width="150" Margin="0 0 0 10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="cedula"  Width="150" Margin="0 0 0 10"  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left"/>
-                    <TextBox x:Name="username" Width="150" Margin="0 0 0 10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left"/>
-
-                    <StackPanel Grid.Row="7" Grid.Column="1" >
-                        <PasswordBox x:Name="password" Width="150" Margin="0 0 0 10" HorizontalAlignment="Left"/>
-
-                        <Button Content="Agregar" HorizontalAlignment="Right" Background="GhostWhite" Click="cambiarMiInfo" />
-                    </StackPanel>
-                </Grid>
+                    <RelativePanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#2AC986"  CornerRadius="5" Width="500" Padding="20" Margin="10, 10, 10, 10">
+                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                                <TextBlock Text="Nombre: "  Margin="0,10,0,10"/>
+                                <TextBlock Text="Apellido"  Margin="0,10,0,10" />
+                                <TextBlock Text="Correo"  Margin="0,10,0,10" />
+                                <TextBlock Text="Telefono"  Margin="0,10,0,10" />
+                               
+                         </StackPanel>
+                            <StackPanel>
+                                <TextBox x:Name="nombre" Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
+                                <TextBox x:Name="apellido"  Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
+                                <TextBox x:Name="correo"  Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                <TextBox x:Name="telefono"   Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                
+                        </StackPanel>
+                        
+                        </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <TextBlock Text="Cedula"  Margin="20,10,0,10" />
+                                    <TextBlock Text="Username"  Margin="20,10,0,10" />
+                                    <TextBlock Text="Password"  Margin="20,10,0,10" />
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox x:Name="cedula"  Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
+                                    <TextBox x:Name="username" Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                    <PasswordBox x:Name="password" Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                    <Button Content="Guardar" HorizontalAlignment="Right" Background="GhostWhite" Click="cambiarMiInfo" />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </RelativePanel>
                 </StackPanel>
             </SplitView.Content>
         </SplitView>

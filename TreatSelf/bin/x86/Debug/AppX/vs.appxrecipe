@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-03T20:37:39.329</Modified>
+      <Modified>2015-11-04T20:42:06.806</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\entrypoint\TreatSelf.exe">
       <PackagePath>entrypoint\TreatSelf.exe</PackagePath>
-      <Modified>2015-11-03T20:37:37.582</Modified>
+      <Modified>2015-11-04T20:42:04.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -110,7 +110,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-03T20:25:11.452</Modified>
+      <Modified>2015-11-04T20:42:05.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\SQLitePCL.dll">
       <PackagePath>SQLitePCL.dll</PackagePath>
@@ -518,11 +518,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\TreatSelf.exe">
       <PackagePath>TreatSelf.exe</PackagePath>
-      <Modified>2015-11-03T20:37:39.326</Modified>
+      <Modified>2015-11-04T20:42:06.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\TreatSelf.xr.xml">
       <PackagePath>TreatSelf.xr.xml</PackagePath>
-      <Modified>2015-11-03T20:03:10.288</Modified>
+      <Modified>2015-11-04T20:28:45.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Core\WinMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
