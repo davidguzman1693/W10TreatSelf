@@ -137,6 +137,12 @@ namespace TreatSelf
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(AddTratamiento), usu);
         }
+
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
+        }
     }
 
     

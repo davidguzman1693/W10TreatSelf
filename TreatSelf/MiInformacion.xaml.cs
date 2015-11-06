@@ -47,25 +47,37 @@ namespace TreatSelf
 
         private async void cambiarMiInfo(object sender, RoutedEventArgs e)
         {
-            var trata = new ParseObject("User");
-            trata.ObjectId = usu.Id;
-            trata["Nombre"] = nombre.Text;
-            trata["Apellido"] = apellido.Text;
-            trata["email"] = correo.Text;
-            trata["telefono"] = int.Parse(telefono.Text);
-            trata["cedula"] = cedula.Text;
-            trata["username"] = username.Text;
-            trata["password"] = password.Password;
+            Esperar1.Visibility = Visibility.Visible;
+            try
+            {
+                var trata = new ParseObject("User");
+                trata.ObjectId = usu.Id;
+                trata["Nombre"] = nombre.Text;
+                trata["Apellido"] = apellido.Text;
+                trata["email"] = correo.Text;
+                trata["telefono"] = int.Parse(telefono.Text);
+                trata["cedula"] = cedula.Text;
+                trata["username"] = username.Text;
+                trata["password"] = password.Password;
 
-            usu.Nombre = nombre.Text;
-            usu.Apellido = apellido.Text;
-            usu.Correo = correo.Text;
-            usu.Telefono = uint.Parse(telefono.Text);
-            usu.Cedula = cedula.Text;
-            usu.Username = username.Text;
-            usu.Password = password.Password;
+                usu.Nombre = nombre.Text;
+                usu.Apellido = apellido.Text;
+                usu.Correo = correo.Text;
+                usu.Telefono = uint.Parse(telefono.Text);
+                usu.Cedula = cedula.Text;
+                usu.Username = username.Text;
+                usu.Password = password.Password;
 
-            await trata.SaveAsync();
+                await trata.SaveAsync();
+                Esperar1.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                Esperar1.Visibility = Visibility.Collapsed;
+                var dialog = new Windows.UI.Popups.MessageDialog("Tu información no ha podido ser editada");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
+                var result = await dialog.ShowAsync();
+            }
         }
 
         private ObservableCollection<Item> menulist;

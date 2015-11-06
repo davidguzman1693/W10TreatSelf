@@ -26,7 +26,7 @@ namespace TreatSelf
     public sealed partial class Notificacion : Page
     {
         Usuario usu;
-        Notificacion noti;
+        Tratamiento trata;
         public Notificacion()
         {
             this.InitializeComponent();
@@ -103,6 +103,7 @@ namespace TreatSelf
             Esperar.Visibility = Visibility.Visible;
             MiNotificacion tratar;
             tratar = ((sender as ListBox).SelectedItem as MiNotificacion);
+            
             try
             {
                 var query = from UsuarioSelected in ParseObject.GetQuery("User")
@@ -139,7 +140,7 @@ namespace TreatSelf
                         break;
 
                     case "Pacientes":
-                        rootFrame.Navigate(typeof(Paciente), usu);
+                        rootFrame.Navigate(typeof(Medico), usu);
                         break;
                 }
             }

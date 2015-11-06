@@ -38,14 +38,19 @@ namespace TreatSelf
         {
             usu = e.Parameter as Usuario;
             tu.Text = usu.Nombre + " " + usu.Apellido;
-            listarTratas();
+            
         }
 
         private ObservableCollection<Tratamiento> tratas1;
 
         public ObservableCollection<Tratamiento> Tratas1
         {
-            get { return tratas1; }
+            get {
+                if (tratas1==null)
+                {
+                    listarTratas();
+                }
+                return tratas1; }
             set { tratas1 = value; }
         }
 

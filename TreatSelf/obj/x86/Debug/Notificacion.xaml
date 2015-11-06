@@ -74,6 +74,8 @@
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
+                <StackPanel>
+                <TextBlock Text="Tus notificaciones" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="Aqua" />
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -134,6 +136,7 @@
                     </ListBox>
                     
                 </Grid>
+                </StackPanel>
             </SplitView.Content>
         </SplitView>
     </Grid>

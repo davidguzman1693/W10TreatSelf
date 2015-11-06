@@ -26,7 +26,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
-            <TextBlock x:ConnectionId='18' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='19' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
         </StackPanel>
         <SplitView x:ConnectionId='4' 
            x:Name="panel1"
@@ -88,10 +88,10 @@
                                
                          </StackPanel>
                             <StackPanel>
-                                <TextBox x:ConnectionId='14' x:Name="nombre" Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
-                                <TextBox x:ConnectionId='15' x:Name="apellido"  Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
-                                <TextBox x:ConnectionId='16' x:Name="correo"  Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
-                                <TextBox x:ConnectionId='17' x:Name="telefono"   Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                <TextBox x:ConnectionId='15' x:Name="nombre" Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
+                                <TextBox x:ConnectionId='16' x:Name="apellido"  Width="130" Margin="10,0,0,10"  HorizontalAlignment="Left"/>
+                                <TextBox x:ConnectionId='17' x:Name="correo"  Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
+                                <TextBox x:ConnectionId='18' x:Name="telefono"   Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
                                 
                         </StackPanel>
                         
@@ -107,6 +107,12 @@
                                     <TextBox x:ConnectionId='11' x:Name="username" Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
                                     <PasswordBox x:ConnectionId='12' x:Name="password" Width="130" Margin="10,0,0,10" HorizontalAlignment="Left"/>
                                     <Button x:ConnectionId='13' Content="Guardar" HorizontalAlignment="Right" Background="GhostWhite"                       />
+                                    <ProgressRing x:ConnectionId='14' x:Name="Esperar1" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

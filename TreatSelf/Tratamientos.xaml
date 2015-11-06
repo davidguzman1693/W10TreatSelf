@@ -18,7 +18,8 @@
                 <AppBarSeparator/>
                 <AppBarToggleButton
                     Icon="StopSlideShow"
-                    Label="LogOut"
+                    Label="LogOut" Click="logout"
+                    
                     />
             </CommandBar.PrimaryCommands>
         </CommandBar>

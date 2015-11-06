@@ -202,6 +202,12 @@ namespace TreatSelf
                 await trata.DeleteAsync();
                 Medico.data.Remove(usu);
                 Medico.data1.Add(usu);
+                var query2 = from UsuarioSelected in ParseObject.GetQuery("Notificacion")
+                            where UsuarioSelected.Get<string>("Medico") == medico.Id
+                            where UsuarioSelected.Get<string>("Paciente") == usu.Id
+                            select UsuarioSelected;
+                ParseObject trata2 = await query2.FirstAsync();
+                await trata2.DeleteAsync();
                 for (int i=0; i<tratas1.Count; i++)
             {
                 var trata1 = new ParseObject("Tratamiento");
