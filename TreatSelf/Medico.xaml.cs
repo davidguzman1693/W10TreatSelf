@@ -32,7 +32,7 @@ namespace TreatSelf
         {
             this.InitializeComponent();
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
-            
+            llenar();
             //tu.Text = MainPage.log.Nombre + " " + MainPage.log.Apellido;
         }
 
@@ -48,11 +48,12 @@ namespace TreatSelf
                     Item item = new Item() { Name = "Pacientes", Icon = "OtherUser" };
                     Item item1 = new Item() { Name = "Tratamientos", Icon = "Paste" };
                     Item item2 = new Item() { Name = "Mi información", Icon = "ContactPresence" };
-                    
+                    Item item3 = new Item() { Name = "Notificaciones", Icon = "Comment" };
                     menulist.Add(item);
                     menulist.Add(item1);
                     menulist.Add(item2);
-                    
+                    menulist.Add(item3);
+
 
                 }
                 return menulist; }
@@ -66,19 +67,28 @@ namespace TreatSelf
             listaPaci.SelectedIndex = -1;
             usu = e.Parameter as Usuario;
             tu.Text = usu.Nombre + " " +usu.Apellido;
-            llenar();
+            
         }
+
+        
 
         private async void listaNoPaci_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            Usuario lbi1 = ((sender as ListBox).SelectedItem as Usuario);
+            Usuario lbi1 = new Usuario();
+            try { 
+            lbi1 = ((sender as ListBox).SelectedItem as Usuario);
             ParseObject appointment = new ParseObject("MedPac");
             appointment["Medico"] = usu.Id;
             appointment["Paciente"] = lbi1.Id;
             await appointment.SaveAsync();
             data.Add(lbi1);
             data1.Remove(lbi1);
+            }
+            catch (Exception ex)
+            {
+
+            }
 
             //((ObservableCollection<Usuario>)listaNoPaci.ItemsSource).Remove(lbi1);
             //tb.Text = "Cantidad: " + i;
@@ -103,6 +113,7 @@ namespace TreatSelf
         {
                 data = new ObservableCollection<Usuario>();
                 data1 = new ObservableCollection<Usuario>();
+            try { 
             var query = from UsuarioSelected in ParseObject.GetQuery("User")
                         where UsuarioSelected.Get<string>("perfil") == "paciente"
                         select UsuarioSelected;
@@ -161,7 +172,33 @@ namespace TreatSelf
                 }
 
             }
-        
+            }
+            catch (Exception e)
+            {
+                var panel = new StackPanel();
+
+                panel.Children.Add(new TextBlock
+                {
+                    Text = "No se ha podido carga la información de paciente, inicia sesion nuevamente",
+                    TextWrapping = TextWrapping.Wrap,
+                });
+
+                var dialog = new ContentDialog()
+                {
+                    Title = "ERROR",
+                    MaxWidth = this.MaxWidth
+                };
+
+                dialog.Content = panel;
+                dialog.PrimaryButtonText = "OK";
+                dialog.IsPrimaryButtonEnabled = true;
+                dialog.PrimaryButtonClick += delegate {
+                    Frame rootFrame = Window.Current.Content as Frame;
+                    rootFrame.Navigate(typeof(MainPage));
+                };
+                dialog.ShowAsync();
+            }
+
         }
         
 
@@ -216,6 +253,9 @@ namespace TreatSelf
 
                     case "Mi información":
                         rootFrame.Navigate(typeof(MiInformacion), usu);
+                        break;
+                    case "Notificaciones":
+                        rootFrame.Navigate(typeof(Notificacion), usu);
                         break;
                 }
             }

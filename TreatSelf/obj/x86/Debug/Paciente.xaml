@@ -23,7 +23,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <TextBlock Text="Bienvenido" Style="{StaticResource TitleTextBlockStyle}"/>
-            <TextBlock x:ConnectionId='21' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
+            <TextBlock x:ConnectionId='23' x:Name="tu" Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"/>
         </StackPanel>
         <SplitView x:ConnectionId='3' 
            x:Name="panel1"
@@ -35,7 +35,7 @@
             >
             <SplitView.Pane>
                 <StackPanel>
-                    <Button Width="50" Height="50" 
+                    <Button x:ConnectionId='4' Width="50" Height="50"                  
                             >
                         <StackPanel>
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
@@ -43,7 +43,7 @@
                             <Rectangle Fill="White" Width="25" Height="3" Margin="0,0,0,4"/>
                         </StackPanel>
                     </Button>
-                    <ListBox x:ConnectionId='4' x:Name="menu"
+                    <ListBox x:ConnectionId='5' x:Name="menu"
                                                             
                              Background="Transparent"
                              Margin="0" Padding="0"                               
@@ -51,12 +51,12 @@
                              >
                         <ListBox.ItemTemplate>
                             <DataTemplate                         >
-                                <StackPanel x:ConnectionId='5' Orientation="Horizontal">
-                                    <SymbolIcon x:ConnectionId='6'                        
+                                <StackPanel x:ConnectionId='6' Orientation="Horizontal">
+                                    <SymbolIcon x:ConnectionId='7'                        
                                                 Width="50" Height="50"
                                                 Foreground="GreenYellow"
                                                 />
-                                    <TextBlock x:ConnectionId='7'                      
+                                    <TextBlock x:ConnectionId='8'                      
                                                VerticalAlignment="Center"
                                                Foreground="Green"
                                                />
@@ -76,21 +76,21 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource TitleTextBlockStyle}" 
                                     Text="Medico" HorizontalAlignment="Center" />
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
-                        <TextBlock x:ConnectionId='16' Style="{StaticResource TitleTextBlockStyle}" 
+                        <TextBlock x:ConnectionId='18' Style="{StaticResource TitleTextBlockStyle}" 
                                     x:Name="Nombre" HorizontalAlignment="Center" />
-                        <TextBlock x:ConnectionId='17' Style="{StaticResource BodyTextBlockStyle}"
-                                  x:Name="Correo" HorizontalAlignment="Center" />
-                        <TextBlock x:ConnectionId='18' Style="{StaticResource BodyTextBlockStyle}"
-                                  x:Name="Cedula" HorizontalAlignment="Center" />
                         <TextBlock x:ConnectionId='19' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Correo" HorizontalAlignment="Center" />
+                        <TextBlock x:ConnectionId='20' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+                        <TextBlock x:ConnectionId='21' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
-                        <ProgressRing x:ConnectionId='20' x:Name="Esperar" IsActive="true"
+                        <ProgressRing x:ConnectionId='22' x:Name="Esperar" IsActive="true"
                                                   Visibility="Collapsed"
                                                   Margin="0 15 0 0"
                                                   Width="40"
@@ -100,23 +100,24 @@
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>
 
-                    <ListBox x:ConnectionId='8'
+                    <ListBox x:ConnectionId='9'
                            x:Name="tratas"
                                                        
                         Grid.Row="0" 
                         Grid.Column="1"                                  
-                        
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        Height="180"
                          >
                         <ListBox.ItemTemplate>
                             <DataTemplate                                >
-                                <Border x:ConnectionId='13' BorderBrush="GreenYellow" 
+                                <Border x:ConnectionId='15' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                     <StackPanel Margin="10 0 0 0">
-                                        <TextBlock x:ConnectionId='14' Style="{StaticResource TitleTextBlockStyle}" 
-                                                                                  />
-                                        <TextBlock x:ConnectionId='15' Style="{StaticResource CaptionTextBlockStyle}" 
-                                                                                />
+                                        <TextBlock x:ConnectionId='16' Style="{StaticResource TitleTextBlockStyle}" 
+                                                                     />
+                                        <TextBlock x:ConnectionId='17' Style="{StaticResource CaptionTextBlockStyle}" 
+                                                                   />
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
@@ -126,10 +127,11 @@
                     <StackPanel Grid.Row="1"
                                 Grid.Column="1"
                                 DataContext="{Binding SelectedItem, ElementName=tratas}">
-                        <TextBox x:ConnectionId='9' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento , Mode=TwoWay}" IsReadOnly="True"/>
-                        <TextBox x:ConnectionId='10' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion, Mode=TwoWay}" IsReadOnly="True"/>
-                        <DatePicker x:ConnectionId='11' x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechafin, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
-                        <DatePicker x:ConnectionId='12' x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter} ,Mode=TwoWay}"/>
+                        <TextBox x:ConnectionId='10' x:Name="nomtra" PlaceholderText="Tratamiento" Margin="0 0 0 10" Text="{Binding NomTratamiento}" IsReadOnly="True"/>
+                        <TextBox x:ConnectionId='11' x:Name="desc" PlaceholderText="Descripcion" Margin="0 0 0 10" Text="{Binding Descripcion}" IsReadOnly="True"/>
+                        <DatePicker x:ConnectionId='12' Header="Fecha Inicio" x:Name="finicio" Margin="0 0 0 10" Date="{Binding Fechainicio, Converter={StaticResource tratamientoConverter}}"/>
+                        <DatePicker x:ConnectionId='13' Header="Fecha Fin" x:Name="fini" Margin="0 0 0 10" Date="{Binding Fechafin, Converter={StaticResource tratamientoConverter}}"/>
+                        <DatePicker x:ConnectionId='14' Header="Fecha Control" x:Name="ffin" Margin="0 0 0 10" Date="{Binding Fechacontrol, Converter={StaticResource tratamientoConverter}}"/>
                      </StackPanel>
                 </Grid>
             </SplitView.Content>

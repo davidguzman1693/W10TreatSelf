@@ -27,6 +27,7 @@ namespace TreatSelf
     public sealed partial class Paciente : Page
     {
         Usuario usu;
+        CheckBox cb;
         public Paciente()
         {
             this.InitializeComponent();
@@ -65,7 +66,7 @@ namespace TreatSelf
                 trata = new Tratamiento();
                 trata.Id = obj.ObjectId;
                 trata.Medico = obj.Get<string>("MedicoId");
-                trata.Fechainicio = (DateTime)obj.UpdatedAt;
+                trata.Fechainicio = (DateTime)obj.CreatedAt;
                 trata.Fechafin = obj.Get<DateTime>("FechaFin");
                 trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
                 trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
@@ -73,18 +74,34 @@ namespace TreatSelf
                 tratas1.Add(trata);
                 if (trata.Fechacontrol.Month == fecha.Month && trata.Fechacontrol.Year == fecha.Year && trata.Fechacontrol.Day == fecha.Day)
                 {
+                    cb = new CheckBox
+                    {
+                        Content = "¿Entendido?"
+                    };
+                    var panel = new StackPanel();
 
+                    panel.Children.Add(new TextBlock
+                    {
+                        Text = "Tienes control medico del tratamiento " + trata.Fechacontrol.Date,
+                        TextWrapping = TextWrapping.Wrap,
+                    });
+                    
                     var dialog = new ContentDialog()
                     {
                         Title = "TIENES CONTROL",
-                        Content = "Tienes control medico del tratamiento "+trata.Fechacontrol.Date,
-                        
                         MaxWidth = this.MaxWidth
                     };
+                    
+                    cb.SetBinding(CheckBox.IsCheckedProperty, new Binding
+                    {
+                        Source = dialog,
+                    });
+                    panel.Children.Add(cb);
+                    dialog.Content = panel;
                     dialog.PrimaryButtonText = "OK";
                     dialog.IsPrimaryButtonEnabled = true;
                     dialog.PrimaryButtonClick += delegate {
-                        notificar();
+                        notificar(cb,trata);
                     };
                     dialog.ShowAsync();
 
@@ -95,11 +112,18 @@ namespace TreatSelf
         }
         }
 
-        public async void notificar()
+        public async void notificar(CheckBox a, Tratamiento trata)
         {
-            var dialog = new Windows.UI.Popups.MessageDialog("Le ha dado ok");
-            dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
-            var result = await dialog.ShowAsync();
+            if(a.IsChecked==false)
+            {
+                ParseObject appointment = new ParseObject("Notificacion");
+                appointment["Medico"] = trata.Medico;
+                appointment["Paciente"] = usu.Id;
+                appointment["Descripcion"] = "No ha tenido en cuenta la fecha de control del tratamiento : "+trata.NomTratamiento;
+               
+                await appointment.SaveAsync();
+            }
+           
         }
 
         private ObservableCollection<Item> menulist;
@@ -133,12 +157,8 @@ namespace TreatSelf
                 Frame rootFrame = Window.Current.Content as Frame;
                 switch (it.Name)
                 {
-                    case "Tratamientos":
-                        rootFrame.Navigate(typeof(Tratamientos), usu);
-                        break;
-
-                    case "Mi información":
-                        rootFrame.Navigate(typeof(MiInformacion), usu);
+                  case "Mi información":
+                        rootFrame.Navigate(typeof(PacInformacion), usu);
                         break;
                 }
             }
@@ -152,6 +172,8 @@ namespace TreatSelf
             rootFrame.Navigate(typeof(MainPage));
         }
 
+        
+
         private async void BuscarElMedico(object sender, SelectionChangedEventArgs e)
         {
             Esperar.Visibility = Visibility.Visible;
@@ -160,7 +182,7 @@ namespace TreatSelf
             try
             {
                 var query = from UsuarioSelected in ParseObject.GetQuery("User")
-                            where UsuarioSelected.ObjectId == "DD3vNtDn8o"
+                            where UsuarioSelected.ObjectId == tratar.Medico
                             select UsuarioSelected;
                 ParseObject obj = await query.FirstAsync();
                 Nombre.Text = obj.Get<string>("Nombre") + " " + obj.Get<string>("Apellido");
@@ -173,6 +195,18 @@ namespace TreatSelf
             {
                 Esperar.Visibility = Visibility.Collapsed;
 
+            }
+        }
+
+        private void showMenu(object sender, RoutedEventArgs e)
+        {
+            if (panel1.IsPaneOpen.Equals(true))
+            {
+                panel1.IsPaneOpen = false;
+            }
+            else
+            {
+                panel1.IsPaneOpen = true;
             }
         }
     }

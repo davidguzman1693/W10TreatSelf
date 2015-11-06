@@ -64,6 +64,8 @@ namespace TreatSelf
             Telefono.Text = ""+usu.Telefono;              
         }
 
+        
+
         private ObservableCollection<Tratamiento> tratas1;
 
         public ObservableCollection<Tratamiento> Tratas1
@@ -82,6 +84,8 @@ namespace TreatSelf
             tratas2 = new ObservableCollection<Tratamiento>();
             //Tratamiento trata1 = new Tratamiento() { NomTratamiento = "Trata1", Descripcion = "Descripcion1", Fechainicio = DateTime.Now, Fechacontrol = DateTime.Now, Fechafin = DateTime.Now };
             //tratas2.Add(trata1);
+            Esperar1.Visibility = Visibility.Visible;
+            try {
                 Tratamiento trata;
                 var query = from UsuarioSelected in ParseObject.GetQuery("Tratamiento")
                             where UsuarioSelected.Get<string>("MedicoId") == medico.Id
@@ -89,23 +93,33 @@ namespace TreatSelf
                 var final = await query.FindAsync();
                 foreach (var obj in final)
                 {
-                        trata = new Tratamiento();
-                        trata.Id = obj.ObjectId;
-                        trata.Fechainicio = (DateTime)obj.UpdatedAt;
-                        trata.Fechafin = obj.Get<DateTime>("FechaFin");
-                        trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
-                        trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
-                        trata.Descripcion = obj.Get<string>("Descripcion");
-                        if (obj.Get<string>("paciente") == usu.Id)
-                        {
+                    trata = new Tratamiento();
+                    trata.Id = obj.ObjectId;
+                    trata.Fechainicio = (DateTime)obj.UpdatedAt;
+                    trata.Fechafin = obj.Get<DateTime>("FechaFin");
+                    trata.Fechacontrol = obj.Get<DateTime>("FechaControl");
+                    trata.NomTratamiento = obj.Get<string>("Nomtratamiento");
+                    trata.Descripcion = obj.Get<string>("Descripcion");
+                    if (obj.Get<string>("paciente") == usu.Id)
+                    {
                         tratas1.Add(trata);
-                        }
-                else if (obj.Get<string>("paciente") == medico.Id)
-                {
-                    tratas2.Add(trata);
-                }
+                    }
+                    else if (obj.Get<string>("paciente") == medico.Id)
+                    {
+                        tratas2.Add(trata);
+                    }
 
+                }
+                Esperar1.Visibility = Visibility.Collapsed;
             }
+            catch (Exception ex)
+            {
+                Esperar1.Visibility = Visibility.Collapsed;
+                var dialog = new Windows.UI.Popups.MessageDialog("No ha sido posible cargar la informacion");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
+                var result = await dialog.ShowAsync();
+            }
+
         }
         
 
@@ -164,25 +178,46 @@ namespace TreatSelf
 
         private async void borrarTratamientodePaci(object sender, RoutedEventArgs e)
         {
+            try { 
             var trata = new ParseObject("Tratamiento");
             trata.ObjectId = tratar.Id;
             await trata.DeleteAsync();
             tratas1.Remove(tratar);
+            }catch(Exception ex)
+            {
+
+            }
             
         }
 
         private async void BorrarPacTra(object sender, RoutedEventArgs e)
         {
-            var trata = new ParseObject("MedPac");
-            trata.ObjectId = usu.MedPac;
-            await trata.DeleteAsync();
-            for (int i=0; i<tratas1.Count; i++)
+            Esperar.Visibility = Visibility.Visible;
+            try {
+                var query = from UsuarioSelected in ParseObject.GetQuery("MedPac")
+                            where UsuarioSelected.Get<string>("Medico") == medico.Id
+                            where UsuarioSelected.Get<string>("Paciente") == usu.Id
+                            select UsuarioSelected;
+                ParseObject trata = await query.FirstAsync();
+                await trata.DeleteAsync();
+                Medico.data.Remove(usu);
+                Medico.data1.Add(usu);
+                for (int i=0; i<tratas1.Count; i++)
             {
                 var trata1 = new ParseObject("Tratamiento");
                 trata1.ObjectId = tratas1.ElementAt(i).Id;
                 await trata1.DeleteAsync();
             }
-            rootFrame.GoBack();
+                Esperar.Visibility = Visibility.Collapsed;
+                rootFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                Esperar.Visibility = Visibility.Collapsed;
+                var dialog = new Windows.UI.Popups.MessageDialog("Ha ocurrido un error, no se ha borrado este paciente");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
+                var result = await dialog.ShowAsync();
+            }
         }
     }
 }

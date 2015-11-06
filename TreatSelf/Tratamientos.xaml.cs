@@ -88,10 +88,11 @@ namespace TreatSelf
                     Item item = new Item() { Name = "Pacientes", Icon = "OtherUser" };
                     Item item1 = new Item() { Name = "Tratamientos", Icon = "Paste" };
                     Item item2 = new Item() { Name = "Mi información", Icon = "ContactPresence" };
-
+                    Item item3 = new Item() { Name = "Notificaciones", Icon = "Comment" };
                     menulist.Add(item);
                     menulist.Add(item1);
                     menulist.Add(item2);
+                    menulist.Add(item3);
 
 
                 }
@@ -112,6 +113,9 @@ namespace TreatSelf
 
                 case "Mi información":
                     rootFrame.Navigate(typeof(MiInformacion), usu);
+                    break;
+                case "Notificaciones":
+                    rootFrame.Navigate(typeof(Notificacion), usu);
                     break;
             }
         }

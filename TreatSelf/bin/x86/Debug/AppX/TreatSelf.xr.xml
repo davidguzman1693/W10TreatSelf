@@ -12,6 +12,7 @@
     <RootPropertyPathName Name="Correo" />
     <RootPropertyPathName Name="Apellido" />
     <RootPropertyPathName Name="Nombre" />
+    <RootPropertyPathName Name="Fecha" />
     <RootPropertyPathName Name="Fechafin" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -67,6 +68,7 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="Height" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Items" />
       <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
@@ -129,6 +131,13 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Fill" />
       <RootProperty Name="Width" />
@@ -149,22 +158,15 @@
     </RootType>
     <RootType FullName="TreatSelf.AddTratamiento" />
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
       <RootProperty Name="Margin" />
       <RootProperty Name="OnContent" />
       <RootProperty Name="OffContent" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
-      <RootProperty Name="IsActive" />
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="TreatSelf.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
@@ -199,7 +201,9 @@
     </RootType>
     <RootType FullName="TreatSelf.Medico" />
     <RootType FullName="TreatSelf.MiInformacion" />
+    <RootType FullName="TreatSelf.Notificacion" />
     <RootType FullName="TreatSelf.Paciente" />
+    <RootType FullName="TreatSelf.PacInformacion" />
     <RootType FullName="TreatSelf.Tratamientos" />
   </Roots.RootTypes>
 </Roots>

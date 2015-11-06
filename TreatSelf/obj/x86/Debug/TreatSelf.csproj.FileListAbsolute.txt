@@ -479,4 +479,14 @@ C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86
 C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.g.cs
 C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.xaml
 C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\MiInformacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Notificacion.g.i.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Notificacion.g.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Notificacion.xaml
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\Notificacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\Notificacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\PacInformacion.g.i.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\PacInformacion.g.cs
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\PacInformacion.xaml
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\PacInformacion.xbf
+C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\bin\x86\Debug\PacInformacion.xbf
 C:\Users\david\documents\visual studio 2015\Projects\TreatSelf\TreatSelf\obj\x86\Debug\TreatSelf.csprojResolveAssemblyReference.cache

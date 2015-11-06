@@ -17,18 +17,23 @@
          
                     <StackPanel Grid.Column="0" HorizontalAlignment="Center">
                         <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
-                        <TextBlock x:ConnectionId='21' Style="{StaticResource TitleTextBlockStyle}" 
+                        <TextBlock x:ConnectionId='22' Style="{StaticResource TitleTextBlockStyle}" 
                                     x:Name="Nombre" HorizontalAlignment="Center" />
-            <TextBlock x:ConnectionId='22' Style="{StaticResource BodyTextBlockStyle}"
-                                  x:Name="Cedula" HorizontalAlignment="Center" />
             <TextBlock x:ConnectionId='23' Style="{StaticResource BodyTextBlockStyle}"
+                                  x:Name="Cedula" HorizontalAlignment="Center" />
+            <TextBlock x:ConnectionId='24' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Correo" HorizontalAlignment="Center" />
                        
-                        <TextBlock x:ConnectionId='24' Style="{StaticResource BodyTextBlockStyle}"
+                        <TextBlock x:ConnectionId='25' Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
-            <Button x:ConnectionId='25' Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"                      />
-                                      
-                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+            <Button x:ConnectionId='26' Content="Borrar" Grid.Row="0" HorizontalAlignment="Center"                      />
+            <ProgressRing x:ConnectionId='27' x:Name="Esperar" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
+            <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>
                 
 
@@ -48,15 +53,21 @@
                            ScrollViewer.VerticalScrollBarVisibility="Visible"
                          Height="300"
                          >
-                    <ListBox.ItemTemplate>
+                        <ProgressRing x:ConnectionId='18' x:Name="Esperar1" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
+                        <ListBox.ItemTemplate>
                         <DataTemplate                                >
-                            <Border x:ConnectionId='18' BorderBrush="GreenYellow" 
+                            <Border x:ConnectionId='19' BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
                               BorderThickness="0,0,0,5" >
                                 <StackPanel Margin="10 0 0 0">
-                                    <TextBlock x:ConnectionId='19' Style="{StaticResource TitleTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='20' Style="{StaticResource TitleTextBlockStyle}" 
                                                                                   />
-                                    <TextBlock x:ConnectionId='20' Style="{StaticResource CaptionTextBlockStyle}" 
+                                    <TextBlock x:ConnectionId='21' Style="{StaticResource CaptionTextBlockStyle}" 
                                                                                 />
                                </StackPanel>
                             </Border>

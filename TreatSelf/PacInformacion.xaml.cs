@@ -23,12 +23,34 @@ namespace TreatSelf
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MiInformacion : Page
+    public sealed partial class PacInformacion : Page
     {
         Usuario usu;
-        public MiInformacion()
+        public PacInformacion()
         {
             this.InitializeComponent();
+        }
+
+        private ObservableCollection<Item> menulist;
+        
+        public ObservableCollection<Item> Menulist
+        {
+            get
+            {
+                if (menulist == null)
+                {
+                    menulist = new ObservableCollection<Item>();
+
+                    Item item1 = new Item() { Name = "Tratamientos", Icon = "Paste" };
+                    Item item2 = new Item() { Name = "Mi información", Icon = "ContactPresence" };
+
+                    menulist.Add(item1);
+                    menulist.Add(item2);
+
+                }
+                return menulist;
+            }
+            set { menulist = value; }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -37,16 +59,38 @@ namespace TreatSelf
             nombre.Text = usu.Nombre;
             apellido.Text = usu.Apellido;
             correo.Text = usu.Correo;
-            telefono.Text = ""+usu.Telefono;
+            telefono.Text = "" + usu.Telefono;
             cedula.Text = usu.Cedula;
             username.Text = usu.Username;
             password.Password = usu.Password;
-            tu.Text = usu.Nombre+" "+usu.Apellido;
+            tu.Text = usu.Nombre + " " + usu.Apellido;
+        }
 
+        private void putContent(object sender, SelectionChangedEventArgs e)
+        {
+            Item it = ((sender as ListBox).SelectedItem as Item);
+            Frame rootFrame = Window.Current.Content as Frame;
+            switch (it.Name)
+            {
+                case "Tratamientos":
+                    rootFrame.Navigate(typeof(Paciente), usu);
+                    break;
+
+               
+
+            }
+        }
+
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
         }
 
         private async void cambiarMiInfo(object sender, RoutedEventArgs e)
         {
+            Esperar1.Visibility = Visibility.Visible;
+            try { 
             var trata = new ParseObject("User");
             trata.ObjectId = usu.Id;
             trata["Nombre"] = nombre.Text;
@@ -66,53 +110,15 @@ namespace TreatSelf
             usu.Password = password.Password;
 
             await trata.SaveAsync();
-        }
-
-        private ObservableCollection<Item> menulist;
-
-        public ObservableCollection<Item> Menulist
-        {
-            get
-            {
-                if (menulist == null)
-                {
-                    menulist = new ObservableCollection<Item>();
-
-                    Item item = new Item() { Name = "Pacientes", Icon = "OtherUser" };
-                    Item item1 = new Item() { Name = "Tratamientos", Icon = "Paste" };
-                    Item item2 = new Item() { Name = "Mi información", Icon = "ContactPresence" };
-                    Item item3 = new Item() { Name = "Notificaciones", Icon = "Comment" };
-                    menulist.Add(item);
-                    menulist.Add(item1);
-                    menulist.Add(item2);
-                    menulist.Add(item3);
-
-
-                }
-                return menulist;
+                Esperar1.Visibility = Visibility.Collapsed;
             }
-            set { menulist = value; }
-        }
-
-        private void putContent(object sender, SelectionChangedEventArgs e)
-        {
-               Item it = ((sender as ListBox).SelectedItem as Item);
-                Frame rootFrame = Window.Current.Content as Frame;
-                switch (it.Name)
-                {
-                    case "Tratamientos":
-                        rootFrame.Navigate(typeof(Tratamientos), usu);
-                        break;
-
-                    case "Pacientes":
-                        rootFrame.Navigate(typeof(Medico), usu);
-                        break;
-                     case "Notificaciones":
-                        rootFrame.Navigate(typeof(Notificacion), usu);
-                        break;
-                
-                }
-           
+            catch (Exception ex)
+            {
+                Esperar1.Visibility = Visibility.Collapsed;
+                var dialog = new Windows.UI.Popups.MessageDialog("Tu información no ha podido ser editada");
+                dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
+                var result = await dialog.ShowAsync();
+            }
         }
 
         private void showMenu(object sender, RoutedEventArgs e)
@@ -125,18 +131,6 @@ namespace TreatSelf
             {
                 panel1.IsPaneOpen = true;
             }
-        }
-
-        private void toAddTratamiento(object sender, RoutedEventArgs e)
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(AddTratamiento), usu);
-        }
-
-        private void logout(object sender, RoutedEventArgs e)
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigate(typeof(MainPage));
         }
     }
 }

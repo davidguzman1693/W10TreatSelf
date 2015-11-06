@@ -10,6 +10,7 @@ namespace TreatSelf.Models
     public class Tratamiento: INotifyPropertyChanged
     {
 
+        
         private String medico;
 
         public String Medico

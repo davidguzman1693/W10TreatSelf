@@ -37,6 +37,7 @@ namespace TreatSelf
             Esperar1.Visibility = Visibility.Visible;
             
             if (username.Text=="" || password.Password=="" || name.Text=="" || lastname.Text=="" || cedula.Text == ""  || telefono.Text == "" || mail.Text=="") {
+                Esperar1.Visibility = Visibility.Collapsed;
                 var dialog = new Windows.UI.Popups.MessageDialog("Todos los campos son obligatorios");
                 dialog.Commands.Add(new Windows.UI.Popups.UICommand("OK") { });
                 var result = await dialog.ShowAsync();

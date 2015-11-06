@@ -27,8 +27,13 @@
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}"
                                   x:Name="Telefono" HorizontalAlignment="Center" />
             <Button Content="Borrar" Grid.Row="0" HorizontalAlignment="Center" Click="BorrarPacTra" />
-                                      
-                        <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
+            <ProgressRing x:Name="Esperar" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
+            <Rectangle Fill="DarkRed" Width="auto" Height="5" Margin="0,0,0,4"/>
                     </StackPanel>
                 
 
@@ -48,7 +53,13 @@
                            ScrollViewer.VerticalScrollBarVisibility="Visible"
                          Height="300"
                          >
-                    <ListBox.ItemTemplate>
+                        <ProgressRing x:Name="Esperar1" IsActive="true"
+                                                  Visibility="Collapsed"
+                                                  Margin="0 15 0 0"
+                                                  Width="40"
+                                                  Height="40"
+                                                  />
+                        <ListBox.ItemTemplate>
                         <DataTemplate x:DataType="models:Tratamiento">
                             <Border BorderBrush="GreenYellow" 
                               HorizontalAlignment="Center" 
